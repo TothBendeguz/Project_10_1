@@ -1,0 +1,11 @@
+h1{
+    text-align: center;
+    
+}
+
+*{
+    background-image: url(dark-castle-background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: auto;
+}
