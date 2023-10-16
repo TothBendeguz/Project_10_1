@@ -9,8 +9,7 @@ zseblampa = False
 kabat = False
 labirintusKod = False
 hp = 100
-józanság = 100
-
+jozansag = 100
 
 
 
@@ -27,17 +26,17 @@ def slowPrint(string, speed=0.05):
         sys.stdout.flush()
         time.sleep(speed)
 
-#slowPrint('1925-ben, egy hideg téli este, a falu szélén magasodott az elhagyatott kastély. A vidék fehér hóval volt bevonva, és a kastély sötét, hátborzongató alakja feltűnt a horizonton. Az épület régóta lakatlan volt, és hosszú ideje tartották hírhedtnek a helyiek. A rémtörténetek egytől-egyig sötét eseményekről szóltak, amelyek itt zajlottak, és az emberek úgy érezték, hogy a kastély titokzatos erőket rejteget. Most, a hóesésben, az emberek újra hallották a kastély suttogásait, és az idő eljött, hogy felderítsék a múlt sötét rejtélyeit. Az elhagyatott kastély magasodott a téli éjszaka közepén, készen arra, hogy felfedezzék a titkait, mielőtt a borzalmak újra elszabadulnak, és bekebelezik az éjszakát. Az elhagyatott kastély falai tele vannak titkokkal, és most a te feladatod felfedezni ezt a sötét és rejtélyes helyet. Amint belépsz a főbejáraton az ajtó mögötted örökre becsukódik.', 0.03)
+slowPrint('1925-ben, egy hideg téli este, a falu szélén magasodott az elhagyatott kastély. A vidék fehér hóval volt bevonva, és a kastély sötét, hátborzongató alakja feltűnt a horizonton. Az épület régóta lakatlan volt, és hosszú ideje tartották hírhedtnek a helyiek. A rémtörténetek egytől-egyig sötét eseményekről szóltak, amelyek itt zajlottak, és az emberek úgy érezték, hogy a kastély titokzatos erőket rejteget. Most, a hóesésben, az emberek újra hallották a kastély suttogásait, és az idő eljött, hogy felderítsék a múlt sötét rejtélyeit. Az elhagyatott kastély magasodott a téli éjszaka közepén, készen arra, hogy felfedezzék a titkait, mielőtt a borzalmak újra elszabadulnak, és bekebelezik az éjszakát. Az elhagyatott kastély falai tele vannak titkokkal, és most a te feladatod felfedezni ezt a sötét és rejtélyes helyet. Amint belépsz a főbejáraton az ajtó mögötted örökre becsukódik.', 0.03)
 
 input("\nHa készen álasz nyomd meg az entert!")
 os.system('cls')
 
 def foBejarat():
     os.system('cls')
-    print('A főbejáratban vagy')
+    print('A főbejáratnál vagy')
     print('1 >> Jobbra látsz egy pincét')
-    print('2 >> előtted van egy hosszú folyosó')
-    print('3 >> Balra Egy nagy csarnokba nyíl egy ajtó')
+    print('2 >> Előtted van egy hosszú folyosó')
+    print('3 >> Balra Egy nagy csarnokba nyílik egy ajtó')
 
     v = input('Merre haladsz tovább?: >> ')
     match v:
@@ -50,7 +49,7 @@ def foBejarat():
 
 def pince():
     os.system('cls')
-    print('A pince bejáratábn vagy')
+    print('A pince bejáratánál vagy')
     print('1 >> Egy raktár ajtaja nyílik meg előtted ')
     print('2 >> Egyenesen nézve látsz egy kriptát ami elég félelmetes és sötét')
     print('3 >> A harmadik hely egy titkos labort rejt')
