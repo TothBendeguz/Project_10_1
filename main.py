@@ -127,6 +127,7 @@ def udvar():
             input("\nHa készen álasz nyomd meg az entert!")              
             return 'udvar'
         case '3':
+            os.system('cls')
             print('Egy labirintushoz érkezel mely egy kódót vár el tőled!')
             kodell = int(input('Mi a kód?: >> '))
             if kodell == 972 and labirintusKod == True:
@@ -134,14 +135,14 @@ def udvar():
                 print('Gratulálok, sikeresen túlélted és kijutottál a kastélyból')
                 input("\nHa készen álasz nyomd meg az entert!")                    
                 return 'kijarat'
-            if kodell != 972:
+            else:
                 os.system('cls')
                 print('Nem jó kód!')
                 print('Keresgélj tovább!')
                 input("\nHa készen álasz nyomd meg az entert!")
                 return 'udvar'        
         case '4':
-            return 'fobejarat'
+            return 'folyoso'
 
 """
 def csarnok():
