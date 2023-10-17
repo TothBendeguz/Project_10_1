@@ -48,6 +48,7 @@ def foBejarat():
             return 'csarnok'
 
 def pince():
+    global kabat
     os.system('cls')
     print('A pince bejáratánál vagy')
     print('1 >> Egy raktár ajtaja nyílik meg előtted ')
