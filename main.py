@@ -26,9 +26,9 @@ def slowPrint(string, speed=0.05):
         sys.stdout.flush()
         time.sleep(speed)
 
-slowPrint('1925-ben, egy hideg téli este, a falu szélén magasodott az elhagyatott kastély. A vidék fehér hóval volt bevonva, és a kastély sötét, hátborzongató alakja feltűnt a horizonton. Az épület régóta lakatlan volt, és hosszú ideje tartották hírhedtnek a helyiek. A rémtörténetek egytől-egyig sötét eseményekről szóltak, amelyek itt zajlottak, és az emberek úgy érezték, hogy a kastély titokzatos erőket rejteget. Most, a hóesésben, az emberek újra hallották a kastély suttogásait, és az idő eljött, hogy felderítsék a múlt sötét rejtélyeit. Az elhagyatott kastély magasodott a téli éjszaka közepén, készen arra, hogy felfedezzék a titkait, mielőtt a borzalmak újra elszabadulnak, és bekebelezik az éjszakát. Az elhagyatott kastély falai tele vannak titkokkal, és most a te feladatod felfedezni ezt a sötét és rejtélyes helyet. Amint belépsz a főbejáraton az ajtó mögötted örökre becsukódik.', 0.03)
+slowPrint('1925-ben, egy hideg téli este, a falu szélén magasodott az elhagyatott kastély. A vidék fehér hóval volt bevonva, és a kastély sötét, hátborzongató alakja feltűnt a horizonton. Az épület régóta lakatlan volt, és hosszú ideje tartották hírhedtnek a helyiek. A rémtörténetek egytől-egyig sötét eseményekről szóltak, amelyek itt zajlottak, és az emberek úgy érezték, hogy a kastély titokzatos erőket rejteget. Most, a hóesésben, az emberek újra hallották a kastély suttogásait, és az idő eljött, hogy felderítsék a múlt sötét rejtélyeit. Az elhagyatott kastély magasodott a téli éjszaka közepén, készen arra, hogy felfedezzék a titkait, mielőtt a borzalmak újra elszabadulnak, és bekebelezik az éjszakát. Az elhagyatott kastély falai tele vannak titkokkal, és most a te feladatod felfedezni ezt a sötét és rejtélyes helyet. Amint belépsz a főbejáraton az ajtó mögötted örökre becsukódik.', 0.001)
 
-input("\nHa készen álasz nyomd meg az entert!")
+input("\n\nHa készen álasz nyomd meg az entert!")
 os.system('cls')
 
 def foBejarat():
@@ -59,6 +59,7 @@ def pince():
     v = input('Merre haladsz tovább?: >> ')
     match v:
         case '1':
+            global kabat
             os.system('cls')
             print('A raktárban megtalálod az eldugott kabátot')
             kabat = True
@@ -98,6 +99,49 @@ def folyoso():
             return 'csarnok'
         case '4':
             return 'fobejarat'
+        
+def udvar():
+    os.system('cls')
+    print('Kiértél az udvarra.')
+    print('Rettentő sötét van és nem látsz a távolba.')
+    print('Csak 3 utat látsz.')
+    print('1 >> Jobbra')
+    print('2 >> Egyenesen')
+    print('3 >> Balra')
+    print('4 >> Inkább vissza megyek a folyosóra és vissza jövök később')
+
+    v = input('Merre haladsz tovább?: >> ')
+    match v:
+        case '1':
+            os.system('cls')
+            print('Találtál egy gyönyörű szikláskertet amelyben nincsen semmi ilyesztő. Végre egy nyugodt helyen vagy.')
+            print('Amikor készen állsz haladj tovább!')
+            print('De vigyázz ne maradj itt sokáig!')
+            input("\nHa készen álasz nyomd meg az entert!")            
+            return 'udvar'
+        case '2':
+            os.system('cls')
+            print('Egy köddel fedett tóhoz érkeztél.')
+            print('Nagyon ilyesztő hely!')
+            print('Itt ne maradj sokáig!')
+            input("\nHa készen álasz nyomd meg az entert!")              
+            return 'udvar'
+        case '3':
+            print('Egy labirintushoz érkezel mely egy kódót vár el tőled!')
+            kodell = int(input('Mi a kód?: >> '))
+            if kodell == 972 and labirintusKod == True:
+                os.system('cls')
+                print('Gratulálok, sikeresen túlélted és kijutottál a kastélyból')
+                input("\nHa készen álasz nyomd meg az entert!")                    
+                return 'kijarat'
+            if kodell != 972:
+                os.system('cls')
+                print('Nem jó kód!')
+                print('Keresgélj tovább!')
+                input("\nHa készen álasz nyomd meg az entert!")
+                return 'udvar'        
+        case '4':
+            return 'fobejarat'
 
 """
 def csarnok():
@@ -116,12 +160,9 @@ def csarnok():
         case '3':
             return 'csarnok'
 """
-        
-
-
 
 hely = foBejarat()
-while hely != 'asd':
+while hely != 'kijarat':
     match hely:
         case 'fobejarat':
             hely = foBejarat()
@@ -131,3 +172,5 @@ while hely != 'asd':
             hely = pince()
         case 'folyoso':
             hely = folyoso()
+        case 'udvar':
+            hely = udvar()
