@@ -319,6 +319,35 @@ def konyvtarTeljesitett():
             return 'iroda'
         case '3':
             return 'folyoso'
+        
+def galeria():
+    print('Megérkeztél a galériába')
+    print('1 >> lépcsőház')
+    print('2 >> iroda')
+    print('3 >> Vissza a könyvtárba')
+    v = input('Merre haladsz tovább?: >> ')
+    match v:
+        case '1':
+            return 'lepcsohaz'
+        case '2':
+            return 'iroda'
+        case '3':
+            return 'konyvtarTeljesitett'
+
+def iroda():
+    print('Megérkeztél az irodába ')
+    print('1 >> ')
+    print('2 >> ')
+    print('3 >> ')
+    v = input('Merre haladsz tovább?: >> ')
+    match v:
+        case '1':
+            return ''
+        case '2':
+            return ''
+        case '3':
+            return ''
+
 
 hely = foBejarat()
 while hely != 'kijarat':
