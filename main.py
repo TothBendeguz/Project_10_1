@@ -4,6 +4,7 @@ import sys
 import os
 #from helyszínek.pince import pince 
 #from helyszínek.csarnok import csarnok
+#from stat import stats
 
 zseblampa = False
 kabat = False
@@ -11,8 +12,7 @@ labirintusKod = False
 hp = 100
 jozansag = 100
 kard = False
-
-
+energia = 100
 
 
 
@@ -34,11 +34,15 @@ os.system('cls')
 
 def foBejarat():
     os.system('cls')
-    print('A főbejáratnál vagy')
+    óra = print('19:00')
+    print(f'Hp:{hp}')
+    print(f'Józanság:{jozansag}')
+    print(f'Energia:{energia}')
+    print('\n--------------------------------------')
+    print('\nA főbejáratnál vagy')
     print('1 >> Jobbra látsz egy pincét')
     print('2 >> Előtted van egy hosszú folyosó')
     print('3 >> Balra Egy nagy csarnokba nyílik egy ajtó')
-
     v = input('Merre haladsz tovább?: >> ')
     match v:
         case '1':
@@ -48,10 +52,17 @@ def foBejarat():
         case '3':
             return 'csarnok'
 
+
+
 def pince():
     global kabat
     os.system('cls')
-    print('A pince bejáratánál vagy')
+    óra = print('19:00')
+    print(f'Hp:{hp}')
+    print(f'Józanság:{jozansag}')
+    print(f'Energia:{energia}')
+    print('\n--------------------------------------')
+    print('\nA pince bejáratánál vagy')
     print('1 >> Egy raktár ajtaja nyílik meg előtted ')
     print('2 >> Egyenesen nézve látsz egy kriptát ami elég félelmetes és sötét')
     print('3 >> A harmadik hely egy titkos labort rejt')
@@ -130,7 +141,12 @@ def pince():
 
 def folyoso():
     os.system('cls')
-    print('A hosszú folyosón sétálsz')
+    óra = print('19:00')
+    print(f'Hp:{hp}')
+    print(f'Józanság:{jozansag}')
+    print(f'Energia:{energia}')
+    print('\n--------------------------------------')
+    print('\nA hosszú folyosón sétálsz')
     print('1 >> Jobb kezednél meglátsz egy ajtót ami kintre vezet')
     print('2 >> Tovább haladva egy konyhát látsz')
     print('3 >> A konyha mellett egyből találsz egy étkezőt')
@@ -161,7 +177,12 @@ def folyoso():
         
 def udvar():
     os.system('cls')
-    print('Kiértél az udvarra.')
+    óra = print('19:00')
+    print(f'Hp:{hp}')
+    print(f'Józanság:{jozansag}')
+    print(f'Energia:{energia}')
+    print('\n--------------------------------------')
+    print('\nKiértél az udvarra.')
     print('Rettentő sötét van és nem látsz a távolba.')
     print('Csak 3 utat látsz.')
     print('1 >> Jobbra')
@@ -173,20 +194,35 @@ def udvar():
     match v:
         case '1':
             os.system('cls')
-            print('Találtál egy gyönyörű szikláskertet amelyben nincsen semmi ilyesztő. Végre egy nyugodt helyen vagy.')
+            óra = print('19:00')
+            print(f'Hp:{hp}')
+            print(f'Józanság:{jozansag}')
+            print(f'Energia:{energia}')
+            print('\n--------------------------------------')
+            print('\nTaláltál egy gyönyörű szikláskertet amelyben nincsen semmi ilyesztő. Végre egy nyugodt helyen vagy.')
             print('Amikor készen állsz haladj tovább!')
             print('De vigyázz ne maradj itt sokáig!')
             input("\nHa készen álasz nyomd meg az entert!")            
             return 'udvar'
         case '2':
             os.system('cls')
-            print('Egy köddel fedett tóhoz érkeztél.')
+            óra = print('19:00')
+            print(f'Hp:{hp}')
+            print(f'Józanság:{jozansag}')
+            print(f'Energia:{energia}')
+            print('\n--------------------------------------')
+            print('\nEgy köddel fedett tóhoz érkeztél.')
             print('Nagyon ilyesztő hely!')
             print('Itt ne maradj sokáig!')
             input("\nHa készen álasz nyomd meg az entert!")              
             return 'udvar'
         case '3':
             os.system('cls')
+            óra = print('19:00')
+            print(f'Hp:{hp}')
+            print(f'Józanság:{jozansag}')
+            print(f'Energia:{energia}')
+            print('\n--------------------------------------')
             print('Egy labirintushoz érkezel mely egy kódót vár el tőled!')
             kodell = int(input('Mi a kód?: >> '))
             if kodell == 972 and labirintusKod == True:
@@ -327,3 +363,8 @@ while hely != 'kijarat':
             hely = konyvtar()
         case 'konyvtarTeljesitett':
             hely = konyvtarTeljesitett()
+
+
+        
+
+    
