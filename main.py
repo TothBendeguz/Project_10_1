@@ -10,6 +10,7 @@ kabat = False
 labirintusKod = False
 hp = 100
 jozansag = 100
+kard = True
 
 
 
@@ -66,9 +67,64 @@ def pince():
             input("\nHa készen álasz nyomd meg az entert!")
             return 'pince'
         case '2':
-            return 'pince'
+            os.system('cls')
+            print('Beértél a kriptába.')
+            print('Nagy zajt keltesz, ezzel felébresztettél egy szellemet.')
+            print('1 >> Megálsz vele harcolni')
+            print('2 >> Megpróbálsz elfutni.')
+            cselekves = input('Mit csinálsz?: >> ')
+            match cselekves:
+                case '1':
+                    if kard == True:
+                        os.system('cls')
+                        print('Most mivel volt kardod szerencsével jártál és legyőzted a szellemet.')
+                        input("\nHa készen álasz nyomd meg az entert!")                        
+                        return 'pince'
+                    else:
+                        os.system('cls')
+                        print('Mivel akartat legyőzni a szellemet?')
+                        print('Meghaltál, a játéknak vége')
+                        return 'kijarat'
+                case '2':
+                    global hp
+                    os.system('cls')
+                    print('Gyorsan elkezdesz futni vissza a pincéhez.')
+                    print('A szellem elkapja a lábad és megsebez.')
+                    print('Ezek után te sikeresen vissza érsz viszont vesztettél -10 hp-t.')
+                    input("\nHa készen álasz nyomd meg az entert!")
+                    hp =- 10
+                    return 'pince'
         case '3':
-            return 'pince'
+            os.system('cls')
+            print('Megérkeztél a laborba ahol egy kis üvegcsét találsz.')
+            print('Meg tudod kockáztatni, hogy megiszod vagy sem.')
+            print('1 >> Beleiszom.')
+            print('2 >> Inkább  megyek máshova!')
+            cselekves = input('Mit csinálsz?: >> ')
+            match cselekves:
+                case '1':
+                    esely = random.randint(1,2)
+                    if esely == 1:
+                        print('Kinyitod az üveget')
+                        print('Belekortyolsz')
+                        print('Jobban érzed magad.')
+                        print('A hp-d növekedett 5-el')
+                        if hp < 95:
+                            hp =+ 5
+                        else:
+                            hp =+ 0
+                        input("\nHa készen álasz nyomd meg az entert!")
+                        return 'pince'
+                    if esely == 2:
+                        print('Kinyitod az üveget')
+                        print('Belekortyolsz')
+                        print('Rossz érzést érzel majd, hánysz egyet.')
+                        print('A hp-d csökkent 10-el')
+                        hp =-10 
+                        input("\nHa készen álasz nyomd meg az entert!")
+                        return 'pince'
+                case '2':
+                    return 'pince'
         case '4':
             return 'fobejarat'
 
