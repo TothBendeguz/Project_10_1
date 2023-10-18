@@ -1,11 +1,24 @@
-h1{
-    text-align: center;
-    
-}
-
 *{
     background-image: url(dark-castle-background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     margin: auto;
+    background-position: center;
+    font-family: 'Young Serif', serif;
+    background-attachment: fixed;
+}
+
+.cim{
+    color: white;
+    text-shadow: 1.5px 1px 1px black;
+    text-align: center;
+}
+
+.text{
+    color: white;
+    text-shadow: 1.5px 1px 1px grey;
+    text-align: center;
+    padding-top: 2%;
+    font-size: 20px;
+    margin: 20px 50px;
 }
