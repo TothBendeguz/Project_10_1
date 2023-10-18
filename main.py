@@ -10,7 +10,7 @@ kabat = False
 labirintusKod = False
 hp = 100
 jozansag = 100
-kard = True
+kard = False
 
 
 
@@ -82,7 +82,7 @@ def pince():
                         return 'pince'
                     else:
                         os.system('cls')
-                        print('Mivel akartat legyőzni a szellemet?')
+                        print('Mivel akartad legyőzni a szellemet?')
                         print('Meghaltál, a játéknak vége')
                         return 'kijarat'
                 case '2':
@@ -134,7 +134,8 @@ def folyoso():
     print('1 >> Jobb kezednél meglátsz egy ajtót ami kintre vezet')
     print('2 >> Tovább haladva egy konyhát látsz')
     print('3 >> A konyha mellett egyből találsz egy étkezőt')
-    print('4 >> Vissza szaladsz a főbejárathoz')
+    print('4 >> Észre veszel egy könyvtárba nyíló ajtót is')
+    print('5 >> Vissza szaladsz a főbejárathoz')
 
     v = input('Merre haladsz tovább?: >> ')
     match v:
@@ -154,6 +155,8 @@ def folyoso():
         case '3':
             return 'csarnok'
         case '4':
+            return 'konyvtar'
+        case '5':
             return 'fobejarat'
         
 def udvar():
@@ -200,23 +203,112 @@ def udvar():
         case '4':
             return 'folyoso'
 
-"""
+
 def csarnok():
+    global kard
     os.system('cls')
     print('A csarnokban vagy')
     print('1 >> A csarnok elje')
     print('2 >> A csarnok közepe')
     print('3 >> A csarnok vége')
+    print('4 >> Vissza a főbejárathoz')
+
 
     v = input('Merre haladsz tovább?: >> ')
     match v:
         case '1':
-            return 'cseleje'
-        case '2':
-            return ''
-        case '3':
+            os.system('cls')
+            print('Találsz egy papírt.')
+            print('A papírra az van írva, hogy:')
+            print("\x1B[3m" + 'Sajtos - Gyengeség: Italian' + "\x1B[0m")
+            input("\nHa készen álasz nyomd meg az entert!")
             return 'csarnok'
-"""
+        case '2':
+            os.system('cls')
+            print('A közepéről belátod a csarnok elejét meg a végét')
+            print('Az elején látsz valamit ami nem tudod micsoda.')
+            print('A végén látsz egy dobozt')
+            input("\nHa készen álasz nyomd meg az entert!")
+            return 'csarnok'
+        case '3':
+            os.system('cls')
+            print('A csarnok végében találsz egy dobozt.')
+            print('Ki akarod nyitni?:')
+            print('1 >> igen')
+            print('2 >> nem')
+            cselekves = input('Mit csinálsz?: >> ')
+            match cselekves:
+                case '1':
+                    os.system('cls')
+                    print('Találsz egy kardot.')
+                    print('Ez még jó lehet harcoknál.')
+                    kard = True
+                    input("\nHa készen álasz nyomd meg az entert!")
+                    return 'csarnok'
+                case '2':
+                    return 'csarnok'
+        case '4':
+            return 'fobejarat'
+
+def konyvtar():
+    global hp
+    os.system('cls')
+    print('A könyvtárban vagy.')
+    print('A könyvtár a tudás bölcsője.')
+    print('Megállít egy barátságosnak tűnő szellem.')
+    print('1 >> Le állsz vele beszélni?')
+    print('2 >> Vissza mész a folyosóra')
+    mitCsinalsz = input('Mit csinálsz?:')
+    match mitCsinalsz:
+        case '1':
+            os.system('cls')
+            print('Bemutatkozik neked:')
+            print("\x1B[3m" + 'A nevem Sajtos Bálint.' + "\x1B[0m")
+            print("\x1B[3m" + 'Ahhoz, hogy tovább haladj le kell győznöd egy sakk mérközésben.' + "\x1B[0m")
+            print("\x1B[3m" + 'Vágjunk is bele.' + "\x1B[0m")
+            print('1 >> Ruy lopez')
+            print('2 >> Four knights')
+            print('3 >> Italian game')
+            megnyitas = input('Melyik megnyitást hozod?:')
+            match megnyitas:
+                case '1':
+                    os.system('cls')
+                    print('A Játszma döntetlennel végződik, nem ér semmi baj, de nem haladhatsz tovább sem.')
+                    input("\nHa készen álasz nyomd meg az entert!")
+                    return 'konyvtar'
+                case '2':
+                    os.system('cls')
+                    print('Ez Sajtos kedvenc megnyitása.')
+                    print('Vesztettél!')
+                    print('Mivel csúnyán el alázott ezért -20 hp')
+                    hp =- 20
+                    input("\nHa készen álasz nyomd meg az entert!")
+                    return 'konyvtar'
+                case '3':
+                    os.system('cls')
+                    print('Jól választottál, megnyerted a játékot')
+                    print('A nyereményed + 5 hp')
+                    hp =+ 5
+                    input("\nHa készen álasz nyomd meg az entert!")
+                    return 'konyvtarTeljesitett'
+        case '2':
+            return 'folyoso'
+
+def konyvtarTeljesitett():
+    os.system('cls')
+    print('A  győzelmed után a könyvtárból több felé is haladhatsz')
+    print('1 >> galéria')
+    print('2 >> iroda')
+    print('3 >> Vissza a folyosóra, de vigyázz ha vissza akarsz jönni a könyvtárba újra meg kell küzdeni Sajtossal.')
+
+    v = input('Merre haladsz tovább?: >> ')
+    match v:
+        case '1':
+            return 'galeria'
+        case '2':
+            return 'iroda'
+        case '3':
+            return 'folyoso'
 
 hely = foBejarat()
 while hely != 'kijarat':
@@ -224,10 +316,14 @@ while hely != 'kijarat':
         case 'fobejarat':
             hely = foBejarat()
         case 'csarnok':
-            pass
+            hely = csarnok()
         case 'pince':
             hely = pince()
         case 'folyoso':
             hely = folyoso()
         case 'udvar':
             hely = udvar()
+        case 'konyvtar':
+            hely = konyvtar()
+        case 'konyvtarTeljesitett':
+            hely = konyvtarTeljesitett()
