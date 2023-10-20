@@ -1,6 +1,6 @@
 Bemész az ajtón:
     -pince
-        -raktár:kabát item
+        -raktár: kabát item
         -kripta: felébreszted a szellemet
             -harc
                 -ha van kard nyersz
@@ -19,12 +19,33 @@ Bemész az ajtón:
                 -Labirintus: ha van kód, ki tudsz jutni
             -egyenesen
                 -halas tó
-        -konyha
+    -konyha
+        -enni lehet
+        -vissza
         -étkező
         -könyvtár: miniboss után tudsz csak tovább menni
             -galéria
                 -lépcsőház
+                    -ezen belül tudsz felmenni a 1. emeletre és lejutni a 0.-ra
+                    -padlás:
+                        -ha van szeblámpa fel tudsz menni ha nem találtad meg, nem
+                        -ha felmész
+                            -könyvespolc
+                            -elhagyatott cuccok:
+                                -labirintuskód
+                            -törött tükrök:
+                                -veszély
+                    -1. emelet folyosó
+                        -hálószoba:
+                            -rövid pihenés(veszélyes)
+                            -józanság növelése
+                        -mosdó
+                            -józanság növelése
+                            -wc-zési lehetőség
+
                 -iroda
+                    -zseblámpa item
+
                 -vissza
             -iroda
             -vissza
