@@ -1,0 +1,38 @@
+Bemész az ajtón:
+    -pince
+        -raktár:kabát item
+        -kripta: felébreszted a szellemet
+            -harc
+                -ha van kard nyersz
+                -ha nincs akkor vesztesz
+            -futás
+                -elfutsz, -10hp
+        -labor: üveget találsz
+            -kapsz 5hp-t
+            -vesztesz 10hp-t
+        -vissza
+    -folyosó
+        -udvar: kabáttal tudsz csak kimenni
+            -jobbra
+                -sziklakert
+            -balra
+                -Labirintus: ha van kód, ki tudsz jutni
+            -egyenesen
+                -halas tó
+        -konyha
+        -étkező
+        -könyvtár: miniboss után tudsz csak tovább menni
+            -galéria
+                -lépcsőház
+                -iroda
+                -vissza
+            -iroda
+            -vissza
+        -vissza
+    -nagy csarnok
+        -eleje: miniboss legyőzés titka
+        -közepe
+            -látsz vmit a csarnok elején
+            -a végén egy dobozt
+        -vége
+            -kard van a dobozban

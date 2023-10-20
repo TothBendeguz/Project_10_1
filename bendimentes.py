@@ -213,7 +213,7 @@ def csarnok():
     global kard
     os.system('cls')
     print('A csarnokban vagy')
-    print('1 >> A csarnok elje')
+    print('1 >> A csarnok eleje')
     print('2 >> A csarnok közepe')
     print('3 >> A csarnok vége')
     print('4 >> Vissza a főbejárathoz')
