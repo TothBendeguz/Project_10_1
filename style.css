@@ -8,12 +8,6 @@
     background-attachment: fixed;
 }
 
-.cim{
-    color: white;
-    text-shadow: 1.5px 1px 1px black;
-    text-align: center;
-}
-
 .text{
     color: white;
     text-shadow: 1.5px 1px 1px grey;
@@ -21,4 +15,35 @@
     padding-top: 2%;
     font-size: 20px;
     margin: 20px 50px;
+}
+
+.navbar{
+    color: white;
+    text-shadow: 1.5px 1px 1px grey;
+    text-align: center;
+    padding-top: 2%;
+    font-size: 20px;
+    margin: 20px 50px;
+}
+
+.link{
+    color: white !important;
+    text-shadow: 1.5px 1px 1px grey;
+    text-align: center;
+    padding-top: 2%;
+    font-size: 25px !important;
+}
+
+.cím{
+    color: white !important;
+    text-shadow: 1.5px 1px 1px grey;
+    text-align: center;
+    padding-top: 2%;
+    font-size: 32px !important;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+a:hover{
+    text-decoration: underline;
 }
