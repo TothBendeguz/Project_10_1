@@ -14,7 +14,7 @@ jozansag = 100
 kard = False
 ehseg = 100
 perc = 0
-ora = 19
+ora = 0
 
 
 
@@ -41,11 +41,10 @@ def foBejarat():
     print(f'HP: {hp}')
     print(f'Józanság: {jozansag}')
     print(f'Éhség: {ehseg}')
+    perc += ora * 60
+    perc = perc % 1440
+    ora = int(perc / 60)
     perc = perc % 60
-    if perc %60 == 0:
-        ora += 1
-        if ora == 24:
-            ora = 0
     print('\n\n')
     print('A főbejáratnál vagy')
     print('1 >> Jobbra látsz egy pincét')
@@ -65,17 +64,18 @@ def pince():
     global kabat
     global perc
     global ora
+    global hp
     os.system('cls')
     perc += 5
     print(f'{ora}:{perc}')
     print(f'HP: {hp}')
     print(f'Józanság: {jozansag}')
     print(f'Éhség: {ehseg}')
+    perc += ora * 60
+    perc = perc % 1440
+    ora = int(perc / 60)
     perc = perc % 60
-    if perc %60 == 0:
-        ora += 1
-        if ora == 24:
-            ora = 0
+
     print('\n\n')
     print('A pince bejáratánál vagy')
     print('1 >> Egy raktár ajtaja nyílik meg előtted ')
@@ -100,6 +100,15 @@ def pince():
         case '2':
             os.system('cls')
             perc += 5
+            os.system('cls')
+            print(f'{ora}:{perc}')
+            print(f'HP: {hp}')
+            print(f'Józanság: {jozansag}')
+            print(f'Éhség: {ehseg}')
+            perc += ora * 60
+            perc = perc % 1440
+            ora = int(perc / 60)
+            perc = perc % 60
             print('\n\n')
             print('Beértél a kriptába.')
             print('Nagy zajt keltesz, ezzel felébresztettél egy szellemet.')
@@ -175,11 +184,10 @@ def folyoso():
     print(f'HP: {hp}')
     print(f'Józanság: {jozansag}')
     print(f'Éhség: {ehseg}')
+    perc += ora * 60
+    perc = perc % 1440
+    ora = int(perc / 60)
     perc = perc % 60
-    if perc %60 == 0:
-        ora += 1
-        if ora == 24:
-            ora = 0
     print('\n\n')
     print('A hosszú folyosón sétálsz')
     print('1 >> Jobb kezednél meglátsz egy ajtót ami kintre vezet')
@@ -219,11 +227,10 @@ def udvar():
     print(f'HP: {hp}')
     print(f'Józanság: {jozansag}')
     print(f'Éhség: {ehseg}')
+    perc += ora * 60
+    perc = perc % 1440
+    ora = int(perc / 60)
     perc = perc % 60
-    if perc %60 == 0:
-        ora += 1
-        if ora == 24:
-            ora = 0
     print('\n\n')
     print('Kiértél az udvarra.')
     print('Rettentő sötét van és nem látsz a távolba.')
@@ -281,11 +288,10 @@ def csarnok():
     print(f'HP: {hp}')
     print(f'Józanság: {jozansag}')
     print(f'Éhség: {ehseg}')
+    perc += ora * 60
+    perc = perc % 1440
+    ora = int(perc / 60)
     perc = perc % 60
-    if perc %60 == 0:
-        ora += 1
-        if ora == 24:
-            ora = 0
     print('\n\n')
     print('A csarnokban vagy')
     print('1 >> A csarnok eleje')
@@ -349,11 +355,10 @@ def konyvtar():
     print(f'HP: {hp}')
     print(f'Józanság: {jozansag}')
     print(f'Éhség: {ehseg}')
+    perc += ora * 60
+    perc = perc % 1440
+    ora = int(perc / 60)
     perc = perc % 60
-    if perc %60 == 0:
-        ora += 1
-        if ora == 24:
-            ora = 0
     print('\n\n')
     print('A könyvtárban vagy.')
     print('A könyvtár a tudás bölcsője.')
@@ -410,11 +415,10 @@ def konyvtarTeljesitett():
     print(f'HP: {hp}')
     print(f'Józanság: {jozansag}')
     print(f'Éhség: {ehseg}')
+    perc += ora * 60
+    perc = perc % 1440
+    ora = int(perc / 60)
     perc = perc % 60
-    if perc %60 == 0:
-        ora += 1
-        if ora == 24:
-            ora = 0
     print('\n\n')
     print('A  győzelmed után a könyvtárból több felé is haladhatsz')
     print('1 >> galéria')
@@ -439,11 +443,10 @@ def galeria():
     print(f'HP: {hp}')
     print(f'Józanság: {jozansag}')
     print(f'Éhség: {ehseg}')
+    perc += ora * 60
+    perc = perc % 1440
+    ora = int(perc / 60)
     perc = perc % 60
-    if perc %60 == 0:
-        ora += 1
-        if ora == 24:
-            ora = 0
     print('\n\n')
     print('Megérkeztél a galériába')
     print('1 >> lépcsőház')
@@ -467,11 +470,10 @@ def iroda():
     print(f'HP: {hp}')
     print(f'Józanság: {jozansag}')
     print(f'Éhség: {ehseg}')
+    perc += ora * 60
+    perc = perc % 1440
+    ora = int(perc / 60)
     perc = perc % 60
-    if perc %60 == 0:
-        ora += 1
-        if ora == 24:
-            ora = 0
     print('\n\n')
     print('Megérkeztél az irodába ')
     print('1 >> ')
