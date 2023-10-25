@@ -4,6 +4,7 @@ import sys
 import os
 #from helyszínek.pince import pince 
 #from helyszínek.csarnok import csarnok
+#from stat_1 import stat
 
 zseblampa = False
 kabat = False
@@ -11,11 +12,9 @@ labirintusKod = False
 hp = 100
 jozansag = 100
 kard = False
-
-
-
-
-
+ehseg = 100
+perc = 0
+ora = 19
 
 
 
@@ -32,8 +31,22 @@ slowPrint('1925-ben, egy hideg téli este, a falu szélén magasodott az elhagya
 input("\n\nHa készen álasz nyomd meg az entert!")
 os.system('cls')
 
+
 def foBejarat():
     os.system('cls')
+    global perc
+    global ora
+    perc += 5
+    print(f'{ora}:{perc}')
+    print(f'HP: {hp}')
+    print(f'Józanság: {jozansag}')
+    print(f'Éhség: {ehseg}')
+    perc = perc % 60
+    if perc %60 == 0:
+        ora += 1
+        if ora == 24:
+            ora = 0
+    print('\n\n')
     print('A főbejáratnál vagy')
     print('1 >> Jobbra látsz egy pincét')
     print('2 >> Előtted van egy hosszú folyosó')
@@ -50,7 +63,20 @@ def foBejarat():
 
 def pince():
     global kabat
+    global perc
+    global ora
     os.system('cls')
+    perc += 5
+    print(f'{ora}:{perc}')
+    print(f'HP: {hp}')
+    print(f'Józanság: {jozansag}')
+    print(f'Éhség: {ehseg}')
+    perc = perc % 60
+    if perc %60 == 0:
+        ora += 1
+        if ora == 24:
+            ora = 0
+    print('\n\n')
     print('A pince bejáratánál vagy')
     print('1 >> Egy raktár ajtaja nyílik meg előtted ')
     print('2 >> Egyenesen nézve látsz egy kriptát ami elég félelmetes és sötét')
@@ -73,6 +99,8 @@ def pince():
                 return 'pince'
         case '2':
             os.system('cls')
+            perc += 5
+            print('\n\n')
             print('Beértél a kriptába.')
             print('Nagy zajt keltesz, ezzel felébresztettél egy szellemet.')
             print('1 >> Megálsz vele harcolni')
@@ -81,17 +109,19 @@ def pince():
             match cselekves:
                 case '1':
                     if kard == True:
+                        perc += 5
                         os.system('cls')
                         print('Most mivel volt kardod szerencsével jártál és legyőzted a szellemet.')
                         input("\nHa készen álasz nyomd meg az entert!")                        
                         return 'pince'
                     else:
                         os.system('cls')
+                        perc += 5
                         print('Mivel akartad legyőzni a szellemet?')
                         print('Meghaltál, a játéknak vége')
                         return 'kijarat'
                 case '2':
-                    global hp
+                    perc += 5
                     os.system('cls')
                     print('Gyorsan elkezdesz futni vissza a pincéhez.')
                     print('A szellem elkapja a lábad és megsebez.')
@@ -101,6 +131,7 @@ def pince():
                     return 'pince'
         case '3':
             os.system('cls')
+            print('\n\n')
             print('Megérkeztél a laborba ahol egy kis üvegcsét találsz.')
             print('Meg tudod kockáztatni, hogy megiszod vagy sem.')
             print('1 >> Beleiszom.')
@@ -110,6 +141,7 @@ def pince():
                 case '1':
                     esely = random.randint(1,2)
                     if esely == 1:
+                        perc += 5
                         print('Kinyitod az üveget')
                         print('Belekortyolsz')
                         print('Jobban érzed magad.')
@@ -121,6 +153,7 @@ def pince():
                         input("\nHa készen álasz nyomd meg az entert!")
                         return 'pince'
                     if esely == 2:
+                        perc += 5
                         print('Kinyitod az üveget')
                         print('Belekortyolsz')
                         print('Rossz érzést érzel majd, hánysz egyet.')
@@ -135,6 +168,19 @@ def pince():
 
 def folyoso():
     os.system('cls')
+    global perc
+    global ora
+    perc += 5
+    print(f'{ora}:{perc}')
+    print(f'HP: {hp}')
+    print(f'Józanság: {jozansag}')
+    print(f'Éhség: {ehseg}')
+    perc = perc % 60
+    if perc %60 == 0:
+        ora += 1
+        if ora == 24:
+            ora = 0
+    print('\n\n')
     print('A hosszú folyosón sétálsz')
     print('1 >> Jobb kezednél meglátsz egy ajtót ami kintre vezet')
     print('2 >> Tovább haladva egy konyhát látsz')
@@ -166,6 +212,19 @@ def folyoso():
         
 def udvar():
     os.system('cls')
+    global perc
+    global ora
+    perc += 5
+    print(f'{ora}:{perc}')
+    print(f'HP: {hp}')
+    print(f'Józanság: {jozansag}')
+    print(f'Éhség: {ehseg}')
+    perc = perc % 60
+    if perc %60 == 0:
+        ora += 1
+        if ora == 24:
+            ora = 0
+    print('\n\n')
     print('Kiértél az udvarra.')
     print('Rettentő sötét van és nem látsz a távolba.')
     print('Csak 3 utat látsz.')
@@ -178,6 +237,7 @@ def udvar():
     match v:
         case '1':
             os.system('cls')
+            perc += 5
             print('Találtál egy gyönyörű szikláskertet amelyben nincsen semmi ilyesztő. Végre egy nyugodt helyen vagy.')
             print('Amikor készen állsz haladj tovább!')
             print('De vigyázz ne maradj itt sokáig!')
@@ -185,6 +245,7 @@ def udvar():
             return 'udvar'
         case '2':
             os.system('cls')
+            perc += 5
             print('Egy köddel fedett tóhoz érkeztél.')
             print('Nagyon ilyesztő hely!')
             print('Itt ne maradj sokáig!')
@@ -192,6 +253,7 @@ def udvar():
             return 'udvar'
         case '3':
             os.system('cls')
+            perc += 5
             print('Egy labirintushoz érkezel mely egy kódót vár el tőled!')
             kodell = int(input('Mi a kód?: >> '))
             if kodell == 972 and labirintusKod == True:
@@ -212,6 +274,19 @@ def udvar():
 def csarnok():
     global kard
     os.system('cls')
+    global perc
+    global ora
+    perc += 5
+    print(f'{ora}:{perc}')
+    print(f'HP: {hp}')
+    print(f'Józanság: {jozansag}')
+    print(f'Éhség: {ehseg}')
+    perc = perc % 60
+    if perc %60 == 0:
+        ora += 1
+        if ora == 24:
+            ora = 0
+    print('\n\n')
     print('A csarnokban vagy')
     print('1 >> A csarnok eleje')
     print('2 >> A csarnok közepe')
@@ -223,6 +298,7 @@ def csarnok():
     match v:
         case '1':
             os.system('cls')
+            perc += 5
             print('Találsz egy papírt.')
             print('A papírra az van írva, hogy:')
             print("\x1B[3m" + 'Sajtos - Gyengeség: Italian' + "\x1B[0m")
@@ -230,6 +306,7 @@ def csarnok():
             return 'csarnok'
         case '2':
             os.system('cls')
+            perc += 5
             print('A közepéről belátod a csarnok elejét meg a végét')
             print('Az elején látsz valamit ami nem tudod micsoda.')
             print('A végén látsz egy dobozt')
@@ -237,6 +314,8 @@ def csarnok():
             return 'csarnok'
         case '3':
             os.system('cls')
+            perc += 5
+            print('\n\n')
             print('A csarnok végében találsz egy dobozt.')
             print('Ki akarod nyitni?:')
             print('1 >> igen')
@@ -263,6 +342,19 @@ def csarnok():
 def konyvtar():
     global hp
     os.system('cls')
+    global perc
+    global ora
+    perc += 5
+    print(f'{ora}:{perc}')
+    print(f'HP: {hp}')
+    print(f'Józanság: {jozansag}')
+    print(f'Éhség: {ehseg}')
+    perc = perc % 60
+    if perc %60 == 0:
+        ora += 1
+        if ora == 24:
+            ora = 0
+    print('\n\n')
     print('A könyvtárban vagy.')
     print('A könyvtár a tudás bölcsője.')
     print('Megállít egy barátságosnak tűnő szellem.')
@@ -272,6 +364,8 @@ def konyvtar():
     match mitCsinalsz:
         case '1':
             os.system('cls')
+            perc += 5
+            print('\n\n')
             print('Bemutatkozik neked:')
             print("\x1B[3m" + 'A nevem Sajtos Bálint.' + "\x1B[0m")
             print("\x1B[3m" + 'Ahhoz, hogy tovább haladj le kell győznöd egy sakk mérközésben.' + "\x1B[0m")
@@ -283,11 +377,13 @@ def konyvtar():
             match megnyitas:
                 case '1':
                     os.system('cls')
+                    perc += 5
                     print('A Játszma döntetlennel végződik, nem ér semmi baj, de nem haladhatsz tovább sem.')
                     input("\nHa készen álasz nyomd meg az entert!")
                     return 'konyvtar'
                 case '2':
                     os.system('cls')
+                    perc += 5
                     print('Ez Sajtos kedvenc megnyitása.')
                     print('Vesztettél!')
                     print('Mivel csúnyán el alázott ezért -20 hp')
@@ -296,6 +392,7 @@ def konyvtar():
                     return 'konyvtar'
                 case '3':
                     os.system('cls')
+                    perc += 5
                     print('Jól választottál, megnyerted a játékot')
                     print('A nyereményed + 5 hp')
                     hp =+ 5
@@ -306,6 +403,19 @@ def konyvtar():
 
 def konyvtarTeljesitett():
     os.system('cls')
+    global perc
+    global ora
+    perc += 5
+    print(f'{ora}:{perc}')
+    print(f'HP: {hp}')
+    print(f'Józanság: {jozansag}')
+    print(f'Éhség: {ehseg}')
+    perc = perc % 60
+    if perc %60 == 0:
+        ora += 1
+        if ora == 24:
+            ora = 0
+    print('\n\n')
     print('A  győzelmed után a könyvtárból több felé is haladhatsz')
     print('1 >> galéria')
     print('2 >> iroda')
@@ -321,6 +431,20 @@ def konyvtarTeljesitett():
             return 'folyoso'
         
 def galeria():
+    os.system('cls')
+    global perc
+    global ora
+    perc += 5
+    print(f'{ora}:{perc}')
+    print(f'HP: {hp}')
+    print(f'Józanság: {jozansag}')
+    print(f'Éhség: {ehseg}')
+    perc = perc % 60
+    if perc %60 == 0:
+        ora += 1
+        if ora == 24:
+            ora = 0
+    print('\n\n')
     print('Megérkeztél a galériába')
     print('1 >> lépcsőház')
     print('2 >> iroda')
@@ -335,6 +459,20 @@ def galeria():
             return 'konyvtarTeljesitett'
 
 def iroda():
+    os.system('cls')
+    global perc
+    global ora
+    perc += 5
+    print(f'{ora}:{perc}')
+    print(f'HP: {hp}')
+    print(f'Józanság: {jozansag}')
+    print(f'Éhség: {ehseg}')
+    perc = perc % 60
+    if perc %60 == 0:
+        ora += 1
+        if ora == 24:
+            ora = 0
+    print('\n\n')
     print('Megérkeztél az irodába ')
     print('1 >> ')
     print('2 >> ')
@@ -366,3 +504,5 @@ while hely != 'kijarat':
             hely = konyvtar()
         case 'konyvtarTeljesitett':
             hely = konyvtarTeljesitett()
+
+#-------------------------------------------
