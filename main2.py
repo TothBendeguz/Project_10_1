@@ -472,6 +472,49 @@ def lepcsohaz():
             return 'galeria'
 
 def elsoEmelet():
+    print('Megérkeztél az első emeletre.')
+    print('Egy folyosóval álsz újra szemben ahol további két ajtó van.')
+    print('1 >> Jobb kezednél egy háloszobába vezető ajtót látsz.')
+    print('2 >> Bal kezednél van egy mosdóba vezető ajtót látsz.')
+    print('3 >> Vissza megyek e lépcsőházba.')
+    v = input('Merre haladsz tovább?: >> ')
+    match v:
+        case '1':
+            return 'haloszoba'
+        case '2':
+            return 'mosdo'
+        case '3':
+            return 'lepcsohaz'
+
+def padlas():
+    print('Megérkeztél a ')
+    print('1 >> ')
+    print('2 >> ')
+    print('3 >> ')
+    v = input('Merre haladsz tovább?: >> ')
+    match v:
+        case '1':
+            return ''
+        case '2':
+            return ''
+        case '3':
+            return ''
+        
+def haloszoba():
+    print('Megérkeztél a ')
+    print('1 >> ')
+    print('2 >> ')
+    print('3 >> ')
+    v = input('Merre haladsz tovább?: >> ')
+    match v:
+        case '1':
+            return ''
+        case '2':
+            return ''
+        case '3':
+            return ''
+        
+def mosdo():
     print('Megérkeztél a ')
     print('1 >> ')
     print('2 >> ')
@@ -514,3 +557,9 @@ while hely != 'kijarat':
             hely = lepcsohaz()
         case 'elsoEmelet':
             hely = elsoEmelet()
+        case 'padlas':
+            hely = padlas()
+        case 'haloszoba':
+            hely = haloszoba()
+        case 'mosdo':
+            hely = mosdo()
