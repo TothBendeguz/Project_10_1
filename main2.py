@@ -48,6 +48,7 @@ def foBejarat():
 
 def pince():
     global kabat
+    global hp
     os.system('cls')
     print('A pince bejáratánál vagy')
     print('1 >> Egy raktár ajtaja nyílik meg előtted ')
@@ -72,9 +73,13 @@ def pince():
         case '2':
             os.system('cls')
             print('Beértél a kriptába.')
+            time.sleep(2)
             print('Nagy zajt keltesz, ezzel felébresztettél egy szellemet.')
+            time.sleep(2)
             print('1 >> Megálsz vele harcolni')
+            time.sleep(2)
             print('2 >> Megpróbálsz elfutni.')
+            time.sleep(2)
             cselekves = input('Mit csinálsz?: >> ')
             match cselekves:
                 case '1':
@@ -86,44 +91,60 @@ def pince():
                     else:
                         os.system('cls')
                         print('Mivel akartad legyőzni a szellemet?')
+                        time.sleep(2)
                         print('Meghaltál, a játéknak vége')
+                        time.sleep(2)
                         return 'kijarat'
                 case '2':
-                    global hp
                     os.system('cls')
                     print('Gyorsan elkezdesz futni vissza a pincéhez.')
+                    time.sleep(3)
                     print('A szellem elkapja a lábad és megsebez.')
+                    time.sleep(3)
                     print('Ezek után te sikeresen vissza érsz viszont vesztettél -10 hp-t.')
+                    time.sleep(3)
+                    hp -= 10
                     input("\nHa készen álasz nyomd meg az entert!")
-                    hp =- 10
                     return 'pince'
         case '3':
             os.system('cls')
             print('Megérkeztél a laborba ahol egy kis üvegcsét találsz.')
+            time.sleep(3)
             print('Meg tudod kockáztatni, hogy megiszod vagy sem.')
+            time.sleep(2)
             print('1 >> Beleiszom.')
+            time.sleep(2)
             print('2 >> Inkább  megyek máshova!')
+            time.sleep(2)
             cselekves = input('Mit csinálsz?: >> ')
             match cselekves:
                 case '1':
                     esely = random.randint(1,2)
                     if esely == 1:
                         print('Kinyitod az üveget')
+                        time.sleep(2)
                         print('Belekortyolsz')
+                        time.sleep(2)
                         print('Jobban érzed magad.')
+                        time.sleep(2)
                         print('A hp-d növekedett 5-el')
+                        time.sleep(2)
                         if hp < 95:
-                            hp =+ 5
+                            hp += 5
                         else:
-                            hp =+ 0
+                            hp += 0
                         input("\nHa készen álasz nyomd meg az entert!")
                         return 'pince'
                     if esely == 2:
                         print('Kinyitod az üveget')
+                        time.sleep(2)
                         print('Belekortyolsz')
+                        time.sleep(2)
                         print('Rossz érzést érzel majd, hánysz egyet.')
+                        time.sleep(2)
                         print('A hp-d csökkent 10-el')
-                        hp =-10 
+                        time.sleep(2)
+                        hp -= 102
                         input("\nHa készen álasz nyomd meg az entert!")
                         return 'pince'
                 case '2':
@@ -146,11 +167,13 @@ def folyoso():
             if kabat == True:
                 os.system('cls')
                 print('Mivel volt kabátot sikeresen kitudtál menni az udvarra!')
+                time.sleep(2)
                 input("\nHa készen álasz nyomd meg az entert!")
                 return 'udvar'
             if kabat == False:
                 os.system('cls')
                 print('Kimentél de egyből vissza jöttél hiszen kabát nélkül fáztál. Keresgélj tovább!')
+                time.sleep(2)
                 input("\nHa készen álasz nyomd meg az entert!")
                 return 'folyoso'
         case '2':
@@ -165,13 +188,19 @@ def folyoso():
 def udvar():
     os.system('cls')
     print('Kiértél az udvarra.')
+    time.sleep(2)
     print('Rettentő sötét van és nem látsz a távolba.')
+    time.sleep(2)
     print('Csak 3 utat látsz.')
+    time.sleep(2)
     print('1 >> Jobbra')
+    time.sleep(1)
     print('2 >> Egyenesen')
+    time.sleep(1)
     print('3 >> Balra')
+    time.sleep(1)
     print('4 >> Inkább vissza megyek a folyosóra és vissza jövök később')
-
+    time.sleep(2)
     v = input('Merre haladsz tovább?: >> ')
     match v:
         case '1':
@@ -268,7 +297,7 @@ def konyvtar():
         print('Megállít egy barátságosnak tűnő szellem.')
         print('1 >> Le állsz vele beszélni?')
         print('2 >> Vissza mész a folyosóra')
-        mitCsinalsz = input('Mit csinálsz?:')
+        mitCsinalsz = input('Mit csinálsz?: >> ')
         match mitCsinalsz:
             case '1':
                 os.system('cls')
@@ -279,7 +308,7 @@ def konyvtar():
                 print('1 >> Ruy lopez')
                 print('2 >> Four knights')
                 print('3 >> Italian game')
-                megnyitas = input('Melyik megnyitást hozod?:')
+                megnyitas = input('Melyik megnyitást hozod?: >> ')
                 match megnyitas:
                     case '1':
                         os.system('cls')
@@ -291,14 +320,17 @@ def konyvtar():
                         print('Ez Sajtos kedvenc megnyitása.')
                         print('Vesztettél!')
                         print('Mivel csúnyán el alázott ezért -20 hp')
-                        hp =- 20
+                        hp -= 20
                         input("\nHa készen álasz nyomd meg az entert!")
                         return 'konyvtar'
                     case '3':
                         os.system('cls')
                         print('Jól választottál, megnyerted a játékot')
                         print('A nyereményed + 5 hp')
-                        hp =+ 5
+                        if hp < 96:
+                            hp += 5
+                        else:
+                            hp += 0
                         input("\nHa készen álasz nyomd meg az entert!")
                         konyvtarBoss = True
                         return 'konyvtarTeljesitett'
@@ -309,6 +341,7 @@ def konyvtar():
     
 def etkezo():
     global kaja
+    global ehseg
     os.system('cls')
     print('Megérkeztél az étkezőbe.')
     print('1 >> Jobb kezednél látsz egy asztalt ahová le tudsz ülni.')
@@ -328,6 +361,11 @@ def etkezo():
                 print('Mivel csináltál kaját, van mit enned')
                 print('Elkezdesz enni.')
                 print('Végeztél, jól laktál, ezért ez +5 kaja.')
+                if ehseg < 96:
+                    ehseg += 5
+                else:
+                    ehseg += 0
+                input("\nHa készen álasz nyomd meg az entert!")
                 kaja = False
                 return 'etkezo'
         case '2':
@@ -346,10 +384,10 @@ def etkezo():
                         print('Beleharapsz')
                         print('Jobban érzed magad.')
                         print('A kajád növekedett 5-el')
-                        if kaja < 95:
-                            kaja =+ 5
+                        if ehseg < 96:
+                            ehseg += 5
                         else:
-                            kaja =+ 0
+                            ehseg += 0
                         input("\nHa készen álasz nyomd meg az entert!")
                         return 'etkezo'
                     if esely == 2:
@@ -358,7 +396,7 @@ def etkezo():
                         print('Beleharapsz')
                         print('Rossz érzést érzel majd, hánysz egyet.')
                         print('A kajád csökkent 10-el')
-                        hp =-10 
+                        ehseg -= 10
                         input("\nHa készen álasz nyomd meg az entert!")
                         return 'etkezo'
                     if esely == 3:
@@ -417,9 +455,10 @@ def konyvtarTeljesitett():
         
 def galeria():
     os.system('cls')
-    print('Megérkeztél a galériába')
-    print('1 >> lépcsőház')
-    print('2 >> iroda')
+    print('Megérkeztél a galériába.')
+    print('3 fele haladhatsz tovább.')
+    print('1 >> Lépcsőházba')
+    print('2 >> Melletted lévő irodába')
     print('3 >> Vissza a könyvtárba')
     v = input('Merre haladsz tovább?: >> ')
     match v:
@@ -472,6 +511,7 @@ def lepcsohaz():
             return 'galeria'
 
 def elsoEmelet():
+    os.system('cls')
     print('Megérkeztél az első emeletre.')
     print('Egy folyosóval álsz újra szemben ahol további két ajtó van.')
     print('1 >> Jobb kezednél egy háloszobába vezető ajtót látsz.')
@@ -487,19 +527,60 @@ def elsoEmelet():
             return 'lepcsohaz'
 
 def padlas():
-    print('Megérkeztél a ')
-    print('1 >> ')
-    print('2 >> ')
-    print('3 >> ')
-    v = input('Merre haladsz tovább?: >> ')
-    match v:
-        case '1':
-            return ''
-        case '2':
-            return ''
-        case '3':
-            return ''
-        
+    global hp
+    global zseblampa
+    if zseblampa == False:
+        print('Elkezdesz fálmászni a létrán.')
+        time.sleep(2)
+        print('Felértél.')
+        time.sleep(2)
+        print('Rettentő sötét van, ezért elkezdesz lámpát keresni.')
+        time.sleep(3)
+        print('Miközben keresed a lámpát megbotlasz egy dobozban és leesel.')
+        time.sleep(3)
+        print('Nagyon megütöd magad alig bírsz újra lábra állni, ezért ez -75 hp.')
+        time.sleep(2)
+        input("\nHa készen álasz nyomd meg az entert!")
+    else:
+        print('Elkezdesz fálmászni a létrán.')
+        time.sleep(2)
+        print('Felértél.')
+        time.sleep(2)
+        print('Rettentő sötét van, de mivel volt lámpád felkapcsolod azt.')
+        time.sleep(3)
+        print('1 >> Jobboldalon látsz egy könyvespolcot')
+        print('2 >> Előtted a pince végébe elhagyatott cuccokat látsz')
+        print('3 >> Bal kéznél egy törött tükröt')
+        print('4 >> Inkább vissza megyek a lépcsőházba')
+        v = input('Merre haladsz tovább?: >> ')
+        match v:
+            case '1':
+                return ''
+            case '2':
+                return ''
+            case '3':
+                return ''
+            case '4':
+                print('Épp mászol lefelé és kialszik a zseblámpád fénye.')
+                time.sleep(3)
+                print('1 >> Megvizsgálod(értsd: kiszeded az elemet, vissza rakod stb...).')
+                print('2 >> Beletörődsz.')
+                cselekves = input('Mit csinálsz?: >> ')
+                match cselekves:
+                    case '1':
+                        os.system('cls')
+                        if kard == False:
+                            print('Találsz egy kardot.')
+                            print('Ez még jó lehet harcoknál.')
+                            kard = True
+                            input("\nHa készen álasz nyomd meg az entert!")
+                            return 'lepcsohaz'
+                        else:
+                            print('Már nálad van a kard.')
+                            input("\nHa készen álasz nyomd meg az entert!")
+                            return 'lepcsohaz'
+                return 'lepcsohaz'
+            
 def haloszoba():
     print('Megérkeztél a ')
     print('1 >> ')
