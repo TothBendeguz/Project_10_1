@@ -14,6 +14,8 @@ kard = False
 konyvtarBoss = False
 ehseg = 100
 kaja = False
+elem = False
+labirintusSzamkod = random.randint(100,999)
 
 
 
@@ -104,6 +106,11 @@ def pince():
                     print('Ezek után te sikeresen vissza érsz viszont vesztettél -10 hp-t.')
                     time.sleep(3)
                     hp -= 10
+                    if hp > 0:
+                        pass
+                    else:
+                        print('Meghaltál')
+                        return 'kijarat'
                     input("\nHa készen álasz nyomd meg az entert!")
                     return 'pince'
         case '3':
@@ -144,7 +151,12 @@ def pince():
                         time.sleep(2)
                         print('A hp-d csökkent 10-el')
                         time.sleep(2)
-                        hp -= 102
+                        hp -= 10
+                        if hp > 0:
+                            pass
+                        else:
+                            print('Meghaltál')
+                            return 'kijarat'
                         input("\nHa készen álasz nyomd meg az entert!")
                         return 'pince'
                 case '2':
@@ -221,7 +233,7 @@ def udvar():
             os.system('cls')
             print('Egy labirintushoz érkezel mely egy kódót vár el tőled!')
             kodell = int(input('Mi a kód?: >> '))
-            if kodell == 972 and labirintusKod == True:
+            if kodell == labirintusSzamkod and labirintusKod == True:
                 os.system('cls')
                 print('Gratulálok, sikeresen túlélted és kijutottál a kastélyból')
                 input("\nHa készen álasz nyomd meg az entert!")                    
@@ -321,6 +333,11 @@ def konyvtar():
                         print('Vesztettél!')
                         print('Mivel csúnyán el alázott ezért -20 hp')
                         hp -= 20
+                        if hp > 0:
+                            pass
+                        else:
+                            print('Meghaltál')
+                            return 'kijarat'
                         input("\nHa készen álasz nyomd meg az entert!")
                         return 'konyvtar'
                     case '3':
@@ -529,7 +546,11 @@ def elsoEmelet():
 def padlas():
     global hp
     global zseblampa
+    global elem
+    global jozansag
+    global labirintusKod
     if zseblampa == False:
+        os.system('cls')
         print('Elkezdesz fálmászni a létrán.')
         time.sleep(2)
         print('Felértél.')
@@ -540,8 +561,15 @@ def padlas():
         time.sleep(3)
         print('Nagyon megütöd magad alig bírsz újra lábra állni, ezért ez -75 hp.')
         time.sleep(2)
+        hp -= 75
+        if hp > 0:
+            pass
+        else:
+            print('Meghaltál')
+            return 'kijarat'
         input("\nHa készen álasz nyomd meg az entert!")
     else:
+        os.system('cls')
         print('Elkezdesz fálmászni a létrán.')
         time.sleep(2)
         print('Felértél.')
@@ -557,29 +585,102 @@ def padlas():
             case '1':
                 return ''
             case '2':
-                return ''
+                print('Rengeteg cuccot látsz')
+                print('1 >> Neki állsz kotorni')
+                print('2 >> Inkább hagyod')
+                cselekves = input('Mit csinálsz?: >> ')
+                match cselekves:
+                    case '1':
+                        os.system('cls')
+                        print('Elkezdesz kotorni.')
+                        print('Egy patkány fut el előtted.')
+                        print('Nagyon megijedsz.')
+                        print('Ezért csökken a józanságod, 30-al')
+                        jozansag -= 30
+                        if jozansag > 0:
+                            pass
+                        else:
+                            print('Meghaltál')
+                            return 'kijarat'
+                        os.system('cls')
+                        print('Bejebb még több cuccot látsz.')
+                        print('1 >> Neki állsz tovább kotorni')
+                        print('2 >> Inkább vissza mész a legelejére')
+                        cselekves = input('Mit csinálsz?: >> ')
+                        match cselekves:
+                            case '1':
+                                print('Tovább kotorva egy újabb patkányt talász.')
+                                print('Hirtelen megharap.')
+                                print('Majd elfut.')
+                                print('A hp-d csökkent 15-el')
+                                hp -= 15
+                                if hp > 0:
+                                    pass
+                                else:
+                                    print('Meghaltál')
+                                    return 'kijarat'
+                                os.system('cl')
+                                print('Bejebb még több cuccot látsz.')
+                                print('1 >> Neki állsz tovább kotorni')
+                                print('2 >> Inkább vissza mész a legelejére')
+                                cselekves = input('Mit csinálsz?: >> ')
+                                match cselekves:
+                                    case '1':
+                                        os.system('cl')
+                                        print('Találsz egy dobozt.')
+                                        print('1 >> Kinyitod')
+                                        print('2 >> Inkább vissza mész a padlás legelejére')
+                                        cselekves = input('Mit csinálsz?: >> ')
+                                        match cselekves:
+                                            case '1':
+                                                print('Találsz egy papírt.')
+                                                print('A papíron egy kódot látsz:')
+                                                print(f'A kód: {labirintusSzamkod}')
+                                                labirintusKod = True
+                                                input("\nHa készen álasz nyomd meg az entert!")
+                                                return 'padlas'
+                                            case '2':
+                                                return 'kijarat'
+                                    case '2':
+                                        return 'kijarat'
+
+                            case '2':
+                                return 'padlas'
+                    case '2':
+                        return 'padlas'
             case '3':
                 return ''
             case '4':
+                os.system('cls')
                 print('Épp mászol lefelé és kialszik a zseblámpád fénye.')
                 time.sleep(3)
+                zseblampa = False
                 print('1 >> Megvizsgálod(értsd: kiszeded az elemet, vissza rakod stb...).')
                 print('2 >> Beletörődsz.')
                 cselekves = input('Mit csinálsz?: >> ')
                 match cselekves:
                     case '1':
                         os.system('cls')
-                        if kard == False:
-                            print('Találsz egy kardot.')
-                            print('Ez még jó lehet harcoknál.')
-                            kard = True
+                        if elem == False:
+                            print('Elkezded kiszedni az elemet.')
+                            print('Miközben szeded ki, megráz és vesztesz 50 hp-t')
+                            hp -= 50
+                            if hp > 0:
+                                pass
+                            else:
+                                print('Meghaltál')
+                                return 'kijarat'
                             input("\nHa készen álasz nyomd meg az entert!")
-                            return 'lepcsohaz'
                         else:
-                            print('Már nálad van a kard.')
+                            print('Elkezded kiszedni az elemet.')
+                            print('Mivel volt elem nálad, ezért azt kicseréled a régivel.')
+                            print('Később ezért újra tudod majd használni a lámpád')
+                            zseblampa = True
+                            elem = False
                             input("\nHa készen álasz nyomd meg az entert!")
                             return 'lepcsohaz'
-                return 'lepcsohaz'
+                    case '2':
+                        return 'lepcsohaz'
             
 def haloszoba():
     print('Megérkeztél a ')
