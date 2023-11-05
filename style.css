@@ -47,3 +47,24 @@
 a:hover{
     text-decoration: underline;
 }
+
+.mimg{
+    margin-top: 80px;
+}
+
+h1{
+    text-align: center;
+    color: white !important;
+    font-size: 50px !important;
+    text-decoration: overline;
+}
+
+.mimg img{
+    width: 60% !important;
+    margin: 50px;
+}
+
+.mimg .row{
+    padding-top: 30px;
+}
+
