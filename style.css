@@ -48,15 +48,26 @@ a:hover{
     text-decoration: underline;
 }
 
-.mimg{
-    margin-top: 80px;
-}
-
 h1{
     text-align: center;
     color: white !important;
     font-size: 50px !important;
     text-decoration: overline;
+}
+
+h2{
+    color: white !important;
+    margin-left: 10%;
+}
+
+.elem{
+    color: white !important;
+    font-size: 20px;
+    margin-left: 15%;
+}
+
+.mimg{
+    margin-top: 80px;
 }
 
 .mimg img{
@@ -67,4 +78,3 @@ h1{
 .mimg .row{
     padding-top: 30px;
 }
-
