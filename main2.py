@@ -15,6 +15,7 @@ konyvtarBoss = False
 ehseg = 100
 kaja = False
 labirintusSzamkod = random.randint(100,999)
+teleHas = False
 
 
 
@@ -434,6 +435,7 @@ def etkezo():
                     print('Mivel csináltál kaját, van mit enned')
                     print('Elkezdesz enni.')
                     print('Végeztél, jól laktál, ezért ez +5 kaja.')
+                    teleHas == True
                     if ehseg < 96:
                         ehseg += 5
                     else:
@@ -789,7 +791,20 @@ def padlas():
                         cselekves = input('Mit csinálsz?: >> ')
                         match cselekves:
                             case '1':
-                                print('Rávilá')
+                                os.system('cls')
+                                print('Rávilágítasz a tükörre és belenézel.')
+                                time.sleep(1.5)
+                                print('Meglátod a jövődet és megijedsz.')
+                                time.sleep(1.5)
+                                print('Ezért a józanságod csökkent -50-el')
+                                jozansag -= 50
+                                if jozansag > 0:
+                                    pass
+                                else:
+                                    print('Meghaltál')
+                                    return 'kijarat'
+                                time.sleep(1.5)
+                                input("\nHa készen álasz nyomd meg az entert!")
                             case '2':
                                 return 'padlas'
                 case '4':
@@ -827,32 +842,66 @@ def padlas():
                             return 'lepcsohaz'
                         """
 def haloszoba():
-    print('Megérkeztél a ')
-    print('1 >> ')
-    print('2 >> ')
-    print('3 >> ')
-    v = input('Merre haladsz tovább?: >> ')
-    match v:
-        case '1':
-            return ''
-        case '2':
-            return ''
-        case '3':
-            return ''
+    print('Megérkeztél a hálószobába')
+    print('1 >> Látsz egy kis ajtót ami átvezet a mosdóba')
+    print('2 >> Vissza a folyosóra')
+    v = 0
+    while v != 1 and 2:
+        v = input('Merre haladsz tovább?: >> ')
+        match v:
+            case '1':
+                return 'mosdo'
+            case '2':
+                return 'folyoso'
         
 def mosdo():
-    print('Megérkeztél a ')
-    print('1 >> ')
-    print('2 >> ')
-    print('3 >> ')
-    v = input('Merre haladsz tovább?: >> ')
-    match v:
-        case '1':
-            return ''
-        case '2':
-            return ''
-        case '3':
-            return ''
+    global hp
+    global jozansag
+    global teleHas
+    print('Megérkeztél a mosdóba')
+    print('1 >> Látsz egy kis ajtót ami átvezet a hálószobába')
+    print('2 >> Hásználod a wc-t')
+    print('3 >> Vissza a folyosóra')
+    v = 0
+    while v != 1 and 2:
+        v = input('Merre haladsz tovább?: >> ')
+        match v:
+            case '1':
+                return 'haloszoba'
+            case '2':
+                if teleHas == True:
+                    print('Elkezdesz leülni a wcre.')
+                    time.sleep(1.5)
+                    print('Mivel előtte ettél már, elvégzed a dolgod.')
+                    time.sleep(1.5)
+                    print('A józanságod növekedett 20-al')
+                    jozansag += 20
+                    if jozansag > 0:
+                        pass
+                    else:
+                        print('Meghaltál')
+                        return 'kijarat'
+                    time.sleep(1.5)
+                    input("\nHa készen álasz nyomd meg az entert!")
+                    teleHas = False
+                    return 'mosdo'
+                else:
+                    print('Elkezdesz leülni a wcre.')
+                    time.sleep(1.5)
+                    print('Mivel nem ettél előtte semmit nem tudod elvégezni a dolgod.')
+                    time.sleep(1.5)
+                    print('Mivel sokat erőlködtél ez -10hp')
+                    hp -= 10
+                    if hp > 0:
+                        pass
+                    else:
+                        print('Meghaltál')
+                        return 'kijarat'
+                    time.sleep(1.5)
+                    input("\nHa készen álasz nyomd meg az entert!")
+                    return 'mosdo'
+            case '3':
+                return ''
 
 hely = foBejarat()
 while hely != 'kijarat':
