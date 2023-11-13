@@ -781,6 +781,7 @@ def padlas():
                             case '2':
                                 return 'padlas'
                 case '3':
+                    os.system('cls')
                     print('Oda érsz a törött tükörhöz.')
                     time.sleep(1.5)
                     print('1 >> Belenézel')
@@ -805,6 +806,7 @@ def padlas():
                                     return 'kijarat'
                                 time.sleep(1.5)
                                 input("\nHa készen álasz nyomd meg az entert!")
+                                return 'pince'
                             case '2':
                                 return 'padlas'
                 case '4':
