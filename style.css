@@ -63,7 +63,12 @@ h2{
 .elem{
     color: white !important;
     font-size: 20px;
-    margin-left: 15%;
+    margin-left: 25%;
+}
+
+.pic{
+    width: 8% !important;
+    float: left;
 }
 
 .mimg{
