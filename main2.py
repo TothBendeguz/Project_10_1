@@ -16,7 +16,8 @@ ehseg = 100
 kaja = False
 labirintusSzamkod = random.randint(100,999)
 teleHas = False
-
+ora = 19
+perc = 00
 
 
 
@@ -33,10 +34,53 @@ input("\n\nHa készen álasz nyomd meg az entert!")
 os.system('cls')
 
 def foBejarat():
+    global ora 
+    global perc
     v = 0
     while v != 1 and 2 and 3:
         os.system('cls')
-        print('A főbejáratnál vagy')
+        #---------------------------------------------------------------------------
+        if ora == 23 and perc == 60:
+            print(f'Idő: 00:00')
+        elif ora < 10 and perc < 10:
+            print(f'Idő: 0{ora}:0{perc}')
+        elif ora < 10 and perc >= 10 and perc < 60:
+            print(f'Idő: 0{ora}:{perc}')
+        elif ora >= 10 and perc < 10:
+            print(f'Idő: {ora}:0{perc}')
+        elif ora >= 10 and perc >= 10 and perc < 60:
+            print(f'Idő: {ora}:{perc}')
+        elif ora < 10 and perc == 60:
+            print(f'Idő: 0{ora + 1}:00')
+        elif ora >= 10 and perc == 60:
+            print(f'Idő: {ora + 1}:00')
+        print(f'\nHP: {hp}', end=' ')
+        print(f'\tJózanság: {jozansag}', end=' ')
+        print(f'\t\tÉhség: {ehseg}')
+        print('-----------------------------------------------------------------')
+        perc += ora * 60
+        perc = perc % 1440
+        ora = int(perc / 60)
+        perc = perc % 60
+        #---------------------------------------------------------------------------
+        #---------------------------------------------------------------------------
+        print('\n\t###############################################')
+        print('\t#   # L # I #  |          #                   #')
+        print('\t# G [   ]   #__|Étkező    #                   #')
+        print('\t#   #####[]##             #    LABIRINTUS     #')
+        print('\t#   [   K   #[ ]###########                   #')
+        print('\t#####       [   ]  Konyha #                   #')
+        print('\t############# F ###########                   #')
+        print('\t#           # O #                             #')
+        print('\t#           # L #                 HALASTÓ     #')
+        print('\t#           # Y #    Udvar                    #')
+        print('\t#  Csarnok  # O ]                             #')
+        print('\t#           # S #                             #')
+        print('\t#           # Ó ###############   SZIKLÁS     #')
+        print('\t#           [   ]   Pince     #               #')
+        print('\t#############[X]###############################')
+        #---------------------------------------------------------------------------
+        print('\nA főbejáratnál vagy')
         print('1 >> Jobbra látsz egy pincét')
         print('2 >> Előtted van egy hosszú folyosó')
         print('3 >> Balra Egy nagy csarnokba nyílik egy ajtó')
@@ -53,10 +97,50 @@ def foBejarat():
 def pince():
     global kabat
     global hp
+    global ora 
+    global perc
+    perc += 5
     v = 0
     while v != 1 and 2 and 3 and 4:
         os.system('cls')
-        print('A pince bejáratánál vagy')
+#---------------------------------------------------------------------------
+        if ora == 23 and perc == 60:
+            print(f'Idő: 00:00')
+        elif ora < 10 and perc < 10:
+            print(f'Idő: 0{ora}:0{perc}')
+        elif ora < 10 and perc >= 10 and perc < 60:
+            print(f'Idő: 0{ora}:{perc}')
+        elif ora >= 10 and perc < 10:
+            print(f'Idő: {ora}:0{perc}')
+        elif ora >= 10 and perc >= 10 and perc < 60:
+            print(f'Idő: {ora}:{perc}')
+        elif ora < 10 and perc == 60:
+            print(f'Idő: 0{ora + 1}:00')
+        elif ora >= 10 and perc == 60:
+            print(f'Idő: {ora + 1}:00')
+        print(f'\nHP: {hp}', end=' ')
+        print(f'\tJózanság: {jozansag}', end=' ')
+        print(f'\t\tÉhség: {ehseg}')
+        print('-----------------------------------------------------------------')
+        perc += ora * 60
+        perc = perc % 1440
+        ora = int(perc / 60)
+        perc = perc % 60
+#---------------------------------------------------------------------------
+#---------------------------------------------------------------------------
+        print('\n\t#######################')
+        print('\t#                     #')
+        print('\t#       KRIPTA        #')
+        print('\t#                     #')
+        print('\t#############[ ]#######')
+        print('\t#           #   #     #')
+        print('\t#   RAKTÁR  [ X ]  L  #')
+        print('\t#           #   #  A  #')
+        print('\t#############   #  B  #')
+        print('\t#     PINCE     #     #')
+        print('\t#######################')
+#--------------------------------------------------------------------------
+        print('\nA pince bejáratánál vagy')
         print('1 >> Egy raktár ajtaja nyílik meg előtted ')
         print('2 >> Egyenesen nézve látsz egy kriptát ami elég félelmetes és sötét')
         print('3 >> A harmadik hely egy titkos labort rejt')
@@ -66,9 +150,47 @@ def pince():
         match v:
             case '1':
                 global kabat
+                perc += 5
                 os.system('cls')
+#---------------------------------------------------------------------------
+                if ora == 23 and perc == 60:
+                    print(f'Idő: 00:00')
+                elif ora < 10 and perc < 10:
+                    print(f'Idő: 0{ora}:0{perc}')
+                elif ora < 10 and perc >= 10 and perc < 60:
+                    print(f'Idő: 0{ora}:{perc}')
+                elif ora >= 10 and perc < 10:
+                    print(f'Idő: {ora}:0{perc}')
+                elif ora >= 10 and perc >= 10 and perc < 60:
+                    print(f'Idő: {ora}:{perc}')
+                elif ora < 10 and perc == 60:
+                    print(f'Idő: 0{ora + 1}:00')
+                elif ora >= 10 and perc == 60:
+                    print(f'Idő: {ora + 1}:00')
+                print(f'\nHP: {hp}', end=' ')
+                print(f'\tJózanság: {jozansag}', end=' ')
+                print(f'\t\tÉhség: {ehseg}')
+                print('-----------------------------------------------------------------')
+                perc += ora * 60
+                perc = perc % 1440
+                ora = int(perc / 60)
+                perc = perc % 60
+#---------------------------------------------------------------------------
+#---------------------------------------------------------------------------
+                print('\n\t#######################')
+                print('\t#                     #')
+                print('\t#       KRIPTA        #')
+                print('\t#                     #')
+                print('\t#############[ ]#######')
+                print('\t#           #   #     #')
+                print('\t#   RAKTÁR X[   ]  L  #')
+                print('\t#           #   #  A  #')
+                print('\t#############   #  B  #')
+                print('\t#     PINCE     #     #')
+                print('\t#######################')
+#--------------------------------------------------------------------------
                 if kabat == False:
-                    print('A raktárban megtalálod az eldugott kabátot')
+                    print('\nA raktárban megtalálod az eldugott kabátot')
                     kabat = True
                     input("\nHa készen álasz nyomd meg az entert!")
                     return 'pince'
@@ -77,8 +199,46 @@ def pince():
                     input("\nHa készen álasz nyomd meg az entert!")
                     return 'pince'
             case '2':
+                perc += 5
                 os.system('cls')
-                print('Beértél a kriptába.')
+#---------------------------------------------------------------------------
+                if ora == 23 and perc == 60:
+                    print(f'Idő: 00:00')
+                elif ora < 10 and perc < 10:
+                    print(f'Idő: 0{ora}:0{perc}')
+                elif ora < 10 and perc >= 10 and perc < 60:
+                    print(f'Idő: 0{ora}:{perc}')
+                elif ora >= 10 and perc < 10:
+                    print(f'Idő: {ora}:0{perc}')
+                elif ora >= 10 and perc >= 10 and perc < 60:
+                    print(f'Idő: {ora}:{perc}')
+                elif ora < 10 and perc == 60:
+                    print(f'Idő: 0{ora + 1}:00')
+                elif ora >= 10 and perc == 60:
+                    print(f'Idő: {ora + 1}:00')
+                print(f'\nHP: {hp}', end=' ')
+                print(f'\tJózanság: {jozansag}', end=' ')
+                print(f'\t\tÉhség: {ehseg}')
+                print('-----------------------------------------------------------------')
+                perc += ora * 60
+                perc = perc % 1440
+                ora = int(perc / 60)
+                perc = perc % 60
+#---------------------------------------------------------------------------
+#---------------------------------------------------------------------------
+                print('\n\t#######################')
+                print('\t#                     #')
+                print('\t#       KRIPTA        #')
+                print('\t#             X       #')
+                print('\t#############[ ]#######')
+                print('\t#           #   #     #')
+                print('\t#   RAKTÁR  [   ]  L  #')
+                print('\t#           #   #  A  #')
+                print('\t#############   #  B  #')
+                print('\t#     PINCE     #     #')
+                print('\t#######################')
+#--------------------------------------------------------------------------
+                print('\nBeértél a kriptába.')
                 time.sleep(1.5)
                 print('Nagy zajt keltesz, ezzel felébresztettél egy szellemet.')
                 time.sleep(1.5)
@@ -90,10 +250,11 @@ def pince():
                     cselekves = input('Mit csinálsz?: >> ')
                     match cselekves:
                         case '1':
+                            perc += 5
                             if kard == True:
                                 os.system('cls')
                                 print('Most mivel volt kardod szerencsével jártál és legyőzted a szellemet.')
-                                input("\nHa készen álasz nyomd meg az entert!")                        
+                                input("\nHa készen állsz nyomd meg az entert!")                        
                                 return 'pince'
                             else:
                                 os.system('cls')
@@ -103,6 +264,7 @@ def pince():
                                 time.sleep(1.5)
                                 return 'kijarat'
                         case '2':
+                            perc += 5
                             os.system('cls')
                             print('Gyorsan elkezdesz futni vissza a pincéhez.')
                             time.sleep(1.5)
@@ -119,8 +281,46 @@ def pince():
                             input("\nHa készen álasz nyomd meg az entert!")
                             return 'pince'
             case '3':
+                perc += 5
                 os.system('cls')
-                print('Megérkeztél a laborba ahol egy kis üvegcsét találsz.')
+#---------------------------------------------------------------------------
+                if ora == 23 and perc == 60:
+                    print(f'Idő: 00:00')
+                elif ora < 10 and perc < 10:
+                    print(f'Idő: 0{ora}:0{perc}')
+                elif ora < 10 and perc >= 10 and perc < 60:
+                    print(f'Idő: 0{ora}:{perc}')
+                elif ora >= 10 and perc < 10:
+                    print(f'Idő: {ora}:0{perc}')
+                elif ora >= 10 and perc >= 10 and perc < 60:
+                    print(f'Idő: {ora}:{perc}')
+                elif ora < 10 and perc == 60:
+                    print(f'Idő: 0{ora + 1}:00')
+                elif ora >= 10 and perc == 60:
+                    print(f'Idő: {ora + 1}:00')
+                print(f'\nHP: {hp}', end=' ')
+                print(f'\tJózanság: {jozansag}', end=' ')
+                print(f'\t\tÉhség: {ehseg}')
+                print('-----------------------------------------------------------------')
+                perc += ora * 60
+                perc = perc % 1440
+                ora = int(perc / 60)
+                perc = perc % 60
+#---------------------------------------------------------------------------
+#---------------------------------------------------------------------------
+                print('\n\t#######################')
+                print('\t#                     #')
+                print('\t#       KRIPTA        #')
+                print('\t#                     #')
+                print('\t#############[ ]#######')
+                print('\t#           #   #     #')
+                print('\t#   RAKTÁR  [   ]X L  #')
+                print('\t#           #   #  A  #')
+                print('\t#############   #  B  #')
+                print('\t#     PINCE     #     #')
+                print('\t#######################')
+#--------------------------------------------------------------------------
+                print('\nMegérkeztél a laborba ahol egy kis üvegcsét találsz.')
                 time.sleep(1.5)
                 print('Meg tudod kockáztatni, hogy megiszod vagy sem.')
                 time.sleep(1.5)
@@ -132,6 +332,7 @@ def pince():
                     cselekves = input('Mit csinálsz?: >> ')
                     match cselekves:
                         case '1':
+                            perc += 5
                             esely = random.randint(1,2)
                             if esely == 1:
                                 print('Kinyitod az üveget')
@@ -171,10 +372,54 @@ def pince():
                 return 'fobejarat'
 
 def folyoso():
+    global ora
+    global perc
+    perc += 5
     v = 0
     while v != 1 and 2 and 3 and 4 and 5:
         os.system('cls')
-        print('A hosszú folyosón sétálsz')
+#---------------------------------------------------------------------------
+        if ora == 23 and perc == 60:
+            print(f'Idő: 00:00')
+        elif ora < 10 and perc < 10:
+            print(f'Idő: 0{ora}:0{perc}')
+        elif ora < 10 and perc >= 10 and perc < 60:
+            print(f'Idő: 0{ora}:{perc}')
+        elif ora >= 10 and perc < 10:
+            print(f'Idő: {ora}:0{perc}')
+        elif ora >= 10 and perc >= 10 and perc < 60:
+            print(f'Idő: {ora}:{perc}')
+        elif ora < 10 and perc == 60:
+            print(f'Idő: 0{ora + 1}:00')
+        elif ora >= 10 and perc == 60:
+            print(f'Idő: {ora + 1}:00')
+        print(f'\nHP: {hp}', end=' ')
+        print(f'\tJózanság: {jozansag}', end=' ')
+        print(f'\t\tÉhség: {ehseg}')
+        print('-----------------------------------------------------------------')
+        perc += ora * 60
+        perc = perc % 1440
+        ora = int(perc / 60)
+        perc = perc % 60
+#---------------------------------------------------------------------------
+#---------------------------------------------------------------------------
+        print('\n\t###############################################')
+        print('\t#   # L # I #  |          #                   #')
+        print('\t# G [   ]   #__|Étkező    #                   #')
+        print('\t#   #####[]##             #    LABIRINTUS     #')
+        print('\t#   [   K   #[ ]###########                   #')
+        print('\t#####       [   ]  Konyha #                   #')
+        print('\t############# F ###########                   #')
+        print('\t#           # L #                             #')
+        print('\t#           # Y #                 HALASTÓ     #')
+        print('\t#           #   #    Udvar                    #')
+        print('\t#  Csarnok  # X ]                             #')
+        print('\t#           #   #                             #')
+        print('\t#           #   ###############   SZIKLÁS     #')
+        print('\t#           [   ]   Pince     #               #')
+        print('\t#############[ ]###############################')
+#---------------------------------------------------------------------------
+        print('\nA hosszú folyosón sétálsz')
         print('1 >> Jobb kezednél meglátsz egy ajtót ami kintre vezet')
         print('2 >> Tovább haladva egy konyhát látsz')
         print('3 >> A konyha mellett egyből találsz egy étkezőt')
@@ -184,6 +429,7 @@ def folyoso():
         v = input('Merre haladsz tovább?: >> ')
         match v:
             case '1':
+                perc += 5
                 if kabat == True:
                     os.system('cls')
                     print('Mivel volt kabátot sikeresen kitudtál menni az udvarra!')
@@ -206,8 +452,52 @@ def folyoso():
                 return 'fobejarat'
         
 def udvar():
+    global ora
+    global perc
+    perc += 5
     os.system('cls')
-    print('Kiértél az udvarra.')
+#---------------------------------------------------------------------------
+    if ora == 23 and perc == 60:
+        print(f'Idő: 00:00')
+    elif ora < 10 and perc < 10:
+        print(f'Idő: 0{ora}:0{perc}')
+    elif ora < 10 and perc >= 10 and perc < 60:
+        print(f'Idő: 0{ora}:{perc}')
+    elif ora >= 10 and perc < 10:
+        print(f'Idő: {ora}:0{perc}')
+    elif ora >= 10 and perc >= 10 and perc < 60:
+        print(f'Idő: {ora}:{perc}')
+    elif ora < 10 and perc == 60:
+        print(f'Idő: 0{ora + 1}:00')
+    elif ora >= 10 and perc == 60:
+        print(f'Idő: {ora + 1}:00')
+    print(f'\nHP: {hp}', end=' ')
+    print(f'\tJózanság: {jozansag}', end=' ')
+    print(f'\t\tÉhség: {ehseg}')
+    print('-----------------------------------------------------------------')
+    perc += ora * 60
+    perc = perc % 1440
+    ora = int(perc / 60)
+    perc = perc % 60
+#---------------------------------------------------------------------------
+#---------------------------------------------------------------------------
+    print('\n\t###############################################')
+    print('\t#   # L # I #  |          #                   #')
+    print('\t# G [   ]   #__|Étkező    #                   #')
+    print('\t#   #####[]##             #    LABIRINTUS     #')
+    print('\t#   [   K   #[ ]###########                   #')
+    print('\t#####       [   ]  Konyha #                   #')
+    print('\t############# F ###########                   #')
+    print('\t#           # O #                             #')
+    print('\t#           # L #                 HALASTÓ     #')
+    print('\t#           # Y #    Udvar                    #')
+    print('\t#  Csarnok  # O ] X                           #')
+    print('\t#           # S #                             #')
+    print('\t#           # Ó ###############   SZIKLÁS     #')
+    print('\t#           [   ]   Pince     #               #')
+    print('\t#############[ ]###############################')
+#---------------------------------------------------------------------------
+    print('\nKiértél az udvarra.')
     time.sleep(1.5)
     print('Rettentő sötét van és nem látsz a távolba.')
     time.sleep(1.5)
@@ -226,8 +516,50 @@ def udvar():
         v = input('Merre haladsz tovább?: >> ')
         match v:
             case '1':
+                perc += 5
                 os.system('cls')
-                print('Találtál egy gyönyörű szikláskertet amelyben nincsen semmi ilyesztő. Végre egy nyugodt helyen vagy.')
+#---------------------------------------------------------------------------
+                if ora == 23 and perc == 60:
+                    print(f'Idő: 00:00')
+                elif ora < 10 and perc < 10:
+                    print(f'Idő: 0{ora}:0{perc}')
+                elif ora < 10 and perc >= 10 and perc < 60:
+                    print(f'Idő: 0{ora}:{perc}')
+                elif ora >= 10 and perc < 10:
+                    print(f'Idő: {ora}:0{perc}')
+                elif ora >= 10 and perc >= 10 and perc < 60:
+                    print(f'Idő: {ora}:{perc}')
+                elif ora < 10 and perc == 60:
+                    print(f'Idő: 0{ora + 1}:00')
+                elif ora >= 10 and perc == 60:
+                    print(f'Idő: {ora + 1}:00')
+                print(f'\nHP: {hp}', end=' ')
+                print(f'\tJózanság: {jozansag}', end=' ')
+                print(f'\t\tÉhség: {ehseg}')
+                print('-----------------------------------------------------------------')
+                perc += ora * 60
+                perc = perc % 1440
+                ora = int(perc / 60)
+                perc = perc % 60
+#---------------------------------------------------------------------------
+#---------------------------------------------------------------------------
+                print('\n\t###############################################')
+                print('\t#   # L # I #  |          #                   #')
+                print('\t# G [   ]   #__|Étkező    #                   #')
+                print('\t#   #####[]##             #    LABIRINTUS     #')
+                print('\t#   [   K   #[ ]###########                   #')
+                print('\t#####       [   ]  Konyha #                   #')
+                print('\t############# F ###########                   #')
+                print('\t#           # O #                             #')
+                print('\t#           # L #                 HALASTÓ     #')
+                print('\t#           # Y #    Udvar                    #')
+                print('\t#  Csarnok  # O ]                             #')
+                print('\t#           # S #                             #')
+                print('\t#           # Ó ###############   SZIKLÁS     #')
+                print('\t#           [   ]   Pince     #      X        #')
+                print('\t#############[ ]###############################')
+#---------------------------------------------------------------------------
+                print('\nTaláltál egy gyönyörű szikláskertet amelyben nincsen semmi ilyesztő. Végre egy nyugodt helyen vagy.')
                 time.sleep(1.5)
                 print('Amikor készen állsz haladj tovább!')
                 time.sleep(1.5)
@@ -236,8 +568,50 @@ def udvar():
                 input("\nHa készen álasz nyomd meg az entert!")            
                 return 'udvar'
             case '2':
+                perc += 5
                 os.system('cls')
-                print('Egy köddel fedett tóhoz érkeztél.')
+#---------------------------------------------------------------------------
+                if ora == 23 and perc == 60:
+                    print(f'Idő: 00:00')
+                elif ora < 10 and perc < 10:
+                    print(f'Idő: 0{ora}:0{perc}')
+                elif ora < 10 and perc >= 10 and perc < 60:
+                    print(f'Idő: 0{ora}:{perc}')
+                elif ora >= 10 and perc < 10:
+                    print(f'Idő: {ora}:0{perc}')
+                elif ora >= 10 and perc >= 10 and perc < 60:
+                    print(f'Idő: {ora}:{perc}')
+                elif ora < 10 and perc == 60:
+                    print(f'Idő: 0{ora + 1}:00')
+                elif ora >= 10 and perc == 60:
+                    print(f'Idő: {ora + 1}:00')
+                print(f'\nHP: {hp}', end=' ')
+                print(f'\tJózanság: {jozansag}', end=' ')
+                print(f'\t\tÉhség: {ehseg}')
+                print('-----------------------------------------------------------------')
+                perc += ora * 60
+                perc = perc % 1440
+                ora = int(perc / 60)
+                perc = perc % 60
+#---------------------------------------------------------------------------
+#---------------------------------------------------------------------------
+                print('\n\t###############################################')
+                print('\t#   # L # I #  |          #                   #')
+                print('\t# G [   ]   #__|Étkező    #                   #')
+                print('\t#   #####[]##             #    LABIRINTUS     #')
+                print('\t#   [   K   #[ ]###########                   #')
+                print('\t#####       [   ]  Konyha #                   #')
+                print('\t############# F ###########                   #')
+                print('\t#           # O #                             #')
+                print('\t#           # L #                 HALASTÓ     #')
+                print('\t#           # Y #    Udvar           X        #')
+                print('\t#  Csarnok  # O ]                             #')
+                print('\t#           # S #                             #')
+                print('\t#           # Ó ###############   SZIKLÁS     #')
+                print('\t#           [   ]   Pince     #               #')
+                print('\t#############[ ]###############################')
+#---------------------------------------------------------------------------
+                print('\nEgy köddel fedett tóhoz érkeztél.')
                 time.sleep(1.5)
                 print('Nagyon ilyesztő hely!')
                 time.sleep(1.5)
@@ -246,8 +620,50 @@ def udvar():
                 input("\nHa készen álasz nyomd meg az entert!")              
                 return 'udvar'
             case '3':
+                perc += 5
                 os.system('cls')
-                print('Egy labirintushoz érkezel mely egy kódót vár el tőled!')
+#---------------------------------------------------------------------------
+                if ora == 23 and perc == 60:
+                    print(f'Idő: 00:00')
+                elif ora < 10 and perc < 10:
+                    print(f'Idő: 0{ora}:0{perc}')
+                elif ora < 10 and perc >= 10 and perc < 60:
+                    print(f'Idő: 0{ora}:{perc}')
+                elif ora >= 10 and perc < 10:
+                    print(f'Idő: {ora}:0{perc}')
+                elif ora >= 10 and perc >= 10 and perc < 60:
+                    print(f'Idő: {ora}:{perc}')
+                elif ora < 10 and perc == 60:
+                    print(f'Idő: 0{ora + 1}:00')
+                elif ora >= 10 and perc == 60:
+                    print(f'Idő: {ora + 1}:00')
+                print(f'\nHP: {hp}', end=' ')
+                print(f'\tJózanság: {jozansag}', end=' ')
+                print(f'\t\tÉhség: {ehseg}')
+                print('-----------------------------------------------------------------')
+                perc += ora * 60
+                perc = perc % 1440
+                ora = int(perc / 60)
+                perc = perc % 60
+#---------------------------------------------------------------------------
+#---------------------------------------------------------------------------
+                print('\n\t###############################################')
+                print('\t#   # L # I #  |          #                   #')
+                print('\t# G [   ]   #__|Étkező    #                   #')
+                print('\t#   #####[]##             #    LABIRINTUS     #')
+                print('\t#   [   K   #[ ]###########        X          #')
+                print('\t#####       [   ]  Konyha #                   #')
+                print('\t############# F ###########                   #')
+                print('\t#           # O #                             #')
+                print('\t#           # L #                 HALASTÓ     #')
+                print('\t#           # Y #    Udvar                    #')
+                print('\t#  Csarnok  # O ]                             #')
+                print('\t#           # S #                             #')
+                print('\t#           # Ó ###############   SZIKLÁS     #')
+                print('\t#           [   ]   Pince     #               #')
+                print('\t#############[ ]###############################')
+#---------------------------------------------------------------------------
+                print('\nEgy labirintushoz érkezel mely egy kódót vár el tőled!')
                 time.sleep(1.5)
                 kodell = int(input('Mi a kód?: >> '))
                 if kodell == labirintusSzamkod and labirintusKod == True:
@@ -270,10 +686,54 @@ def udvar():
 
 def csarnok():
     global kard
+    global ora
+    global perc
+    perc += 5
     v = 0
     while v != 1 and 2 and 3 and 4:
         os.system('cls')
-        print('A csarnokban vagy')
+#---------------------------------------------------------------------------
+        if ora == 23 and perc == 60:
+            print(f'Idő: 00:00')
+        elif ora < 10 and perc < 10:
+            print(f'Idő: 0{ora}:0{perc}')
+        elif ora < 10 and perc >= 10 and perc < 60:
+            print(f'Idő: 0{ora}:{perc}')
+        elif ora >= 10 and perc < 10:
+            print(f'Idő: {ora}:0{perc}')
+        elif ora >= 10 and perc >= 10 and perc < 60:
+            print(f'Idő: {ora}:{perc}')
+        elif ora < 10 and perc == 60:
+            print(f'Idő: 0{ora + 1}:00')
+        elif ora >= 10 and perc == 60:
+            print(f'Idő: {ora + 1}:00')
+        print(f'\nHP: {hp}', end=' ')
+        print(f'\tJózanság: {jozansag}', end=' ')
+        print(f'\t\tÉhség: {ehseg}')
+        print('-----------------------------------------------------------------')
+        perc += ora * 60
+        perc = perc % 1440
+        ora = int(perc / 60)
+        perc = perc % 60
+#---------------------------------------------------------------------------
+#---------------------------------------------------------------------------
+        print('\n\t###############################################')
+        print('\t#   # L # I #  |          #                   #')
+        print('\t# G [   ]   #__|Étkező    #                   #')
+        print('\t#   #####[]##             #    LABIRINTUS     #')
+        print('\t#   [   K   #[ ]###########                   #')
+        print('\t#####       [   ]  Konyha #                   #')
+        print('\t############# F ###########                   #')
+        print('\t#           # O #                             #')
+        print('\t#           # L #                 HALASTÓ     #')
+        print('\t#           # Y #    Udvar                    #')
+        print('\t#  Csarnok  # O ]                             #')
+        print('\t#           # S #                             #')
+        print('\t#           # Ó ###############   SZIKLÁS     #')
+        print('\t#         X [   ]   Pince     #               #')
+        print('\t#############[ ]###############################')
+#---------------------------------------------------------------------------
+        print('\nA csarnokban vagy')
         print('1 >> A csarnok eleje')
         print('2 >> A csarnok közepe')
         print('3 >> A csarnok vége')
@@ -281,8 +741,50 @@ def csarnok():
         v = input('Merre haladsz tovább?: >> ')
         match v:
             case '1':
+                perc += 5
                 os.system('cls')
-                print('Találsz egy papírt.')
+#---------------------------------------------------------------------------
+                if ora == 23 and perc == 60:
+                    print(f'Idő: 00:00')
+                elif ora < 10 and perc < 10:
+                    print(f'Idő: 0{ora}:0{perc}')
+                elif ora < 10 and perc >= 10 and perc < 60:
+                    print(f'Idő: 0{ora}:{perc}')
+                elif ora >= 10 and perc < 10:
+                    print(f'Idő: {ora}:0{perc}')
+                elif ora >= 10 and perc >= 10 and perc < 60:
+                    print(f'Idő: {ora}:{perc}')
+                elif ora < 10 and perc == 60:
+                    print(f'Idő: 0{ora + 1}:00')
+                elif ora >= 10 and perc == 60:
+                    print(f'Idő: {ora + 1}:00')
+                print(f'\nHP: {hp}', end=' ')
+                print(f'\tJózanság: {jozansag}', end=' ')
+                print(f'\t\tÉhség: {ehseg}')
+                print('-----------------------------------------------------------------')
+                perc += ora * 60
+                perc = perc % 1440
+                ora = int(perc / 60)
+                perc = perc % 60
+#---------------------------------------------------------------------------
+#---------------------------------------------------------------------------
+                print('\n\t###############################################')
+                print('\t#   # L # I #  |          #                   #')
+                print('\t# G [   ]   #__|Étkező    #                   #')
+                print('\t#   #####[]##             #    LABIRINTUS     #')
+                print('\t#   [   K   #[ ]###########                   #')
+                print('\t#####       [   ]  Konyha #                   #')
+                print('\t############# F ###########                   #')
+                print('\t#           # O #                             #')
+                print('\t#           # L #                 HALASTÓ     #')
+                print('\t#           # Y #    Udvar                    #')
+                print('\t#  Csarnok  # O ]                             #')
+                print('\t#           # S #                             #')
+                print('\t#           # Ó ###############   SZIKLÁS     #')
+                print('\t#         X [   ]   Pince     #               #')
+                print('\t#############[ ]###############################')
+#---------------------------------------------------------------------------
+                print('\nTalálsz egy papírt.')
                 time.sleep(1.5)
                 print('A papírra az van írva, hogy:')
                 time.sleep(1.5)
@@ -291,8 +793,50 @@ def csarnok():
                 input("\nHa készen álasz nyomd meg az entert!")
                 return 'csarnok'
             case '2':
+                perc += 5
                 os.system('cls')
-                print('A közepéről belátod a csarnok elejét meg a végét')
+#---------------------------------------------------------------------------
+                if ora == 23 and perc == 60:
+                    print(f'Idő: 00:00')
+                elif ora < 10 and perc < 10:
+                    print(f'Idő: 0{ora}:0{perc}')
+                elif ora < 10 and perc >= 10 and perc < 60:
+                    print(f'Idő: 0{ora}:{perc}')
+                elif ora >= 10 and perc < 10:
+                    print(f'Idő: {ora}:0{perc}')
+                elif ora >= 10 and perc >= 10 and perc < 60:
+                    print(f'Idő: {ora}:{perc}')
+                elif ora < 10 and perc == 60:
+                    print(f'Idő: 0{ora + 1}:00')
+                elif ora >= 10 and perc == 60:
+                    print(f'Idő: {ora + 1}:00')
+                print(f'\nHP: {hp}', end=' ')
+                print(f'\tJózanság: {jozansag}', end=' ')
+                print(f'\t\tÉhség: {ehseg}')
+                print('-----------------------------------------------------------------')
+                perc += ora * 60
+                perc = perc % 1440
+                ora = int(perc / 60)
+                perc = perc % 60
+#---------------------------------------------------------------------------
+#---------------------------------------------------------------------------
+                print('\n\t###############################################')
+                print('\t#   # L # I #  |          #                   #')
+                print('\t# G [   ]   #__|Étkező    #                   #')
+                print('\t#   #####[]##             #    LABIRINTUS     #')
+                print('\t#   [   K   #[ ]###########                   #')
+                print('\t#####       [   ]  Konyha #                   #')
+                print('\t############# F ###########                   #')
+                print('\t#           # O #                             #')
+                print('\t#           # L #                 HALASTÓ     #')
+                print('\t#           # Y #    Udvar                    #')
+                print('\t#  Csarnok X# O ]                             #')
+                print('\t#           # S #                             #')
+                print('\t#           # Ó ###############   SZIKLÁS     #')
+                print('\t#           [   ]   Pince     #               #')
+                print('\t#############[ ]###############################')
+#---------------------------------------------------------------------------
+                print('\nA közepéről belátod a csarnok elejét meg a végét')
                 time.sleep(1.5)
                 print('Az elején látsz valamit ami nem tudod micsoda.')
                 time.sleep(1.5)
@@ -301,8 +845,50 @@ def csarnok():
                 input("\nHa készen álasz nyomd meg az entert!")
                 return 'csarnok'
             case '3':
+                perc += 5
                 os.system('cls')
-                print('A csarnok végében találsz egy dobozt.')
+#---------------------------------------------------------------------------
+                if ora == 23 and perc == 60:
+                    print(f'Idő: 00:00')
+                elif ora < 10 and perc < 10:
+                    print(f'Idő: 0{ora}:0{perc}')
+                elif ora < 10 and perc >= 10 and perc < 60:
+                    print(f'Idő: 0{ora}:{perc}')
+                elif ora >= 10 and perc < 10:
+                    print(f'Idő: {ora}:0{perc}')
+                elif ora >= 10 and perc >= 10 and perc < 60:
+                    print(f'Idő: {ora}:{perc}')
+                elif ora < 10 and perc == 60:
+                    print(f'Idő: 0{ora + 1}:00')
+                elif ora >= 10 and perc == 60:
+                    print(f'Idő: {ora + 1}:00')
+                print(f'\nHP: {hp}', end=' ')
+                print(f'\tJózanság: {jozansag}', end=' ')
+                print(f'\t\tÉhség: {ehseg}')
+                print('-----------------------------------------------------------------')
+                perc += ora * 60
+                perc = perc % 1440
+                ora = int(perc / 60)
+                perc = perc % 60
+#---------------------------------------------------------------------------
+#---------------------------------------------------------------------------
+                print('\n\t###############################################')
+                print('\t#   # L # I #  |          #                   #')
+                print('\t# G [   ]   #__|Étkező    #                   #')
+                print('\t#   #####[]##             #    LABIRINTUS     #')
+                print('\t#   [   K   #[ ]###########                   #')
+                print('\t#####       [   ]  Konyha #                   #')
+                print('\t############# F ###########                   #')
+                print('\t#         X # O #                             #')
+                print('\t#           # L #                 HALASTÓ     #')
+                print('\t#           # Y #    Udvar                    #')
+                print('\t#  Csarnok  # O ]                             #')
+                print('\t#           # S #                             #')
+                print('\t#           # Ó ###############   SZIKLÁS     #')
+                print('\t#           [   ]   Pince     #               #')
+                print('\t#############[ ]###############################')
+#---------------------------------------------------------------------------                
+                print('\nA csarnok végében találsz egy dobozt.')
                 time.sleep(1.5)
                 print('Ki akarod nyitni?:')
                 time.sleep(1.5)
@@ -315,6 +901,7 @@ def csarnok():
                     cselekves = input('Mit csinálsz?: >> ')
                     match cselekves:
                         case '1':
+                            perc += 5
                             os.system('cls')
                             if kard == False:
                                 print('Találsz egy kardot.')
@@ -334,8 +921,52 @@ def csarnok():
 def konyvtar():
     global hp
     global konyvtarBoss
+    global ora
+    global perc
+    perc += 5
     os.system('cls')
-    print('A könyvtárban vagy.')
+#---------------------------------------------------------------------------
+    if ora == 23 and perc == 60:
+        print(f'Idő: 00:00')
+    elif ora < 10 and perc < 10:
+        print(f'Idő: 0{ora}:0{perc}')
+    elif ora < 10 and perc >= 10 and perc < 60:
+        print(f'Idő: 0{ora}:{perc}')
+    elif ora >= 10 and perc < 10:
+        print(f'Idő: {ora}:0{perc}')
+    elif ora >= 10 and perc >= 10 and perc < 60:
+        print(f'Idő: {ora}:{perc}')
+    elif ora < 10 and perc == 60:
+        print(f'Idő: 0{ora + 1}:00')
+    elif ora >= 10 and perc == 60:
+        print(f'Idő: {ora + 1}:00')
+    print(f'\nHP: {hp}', end=' ')
+    print(f'\tJózanság: {jozansag}', end=' ')
+    print(f'\t\tÉhség: {ehseg}')
+    print('-----------------------------------------------------------------')
+    perc += ora * 60
+    perc = perc % 1440
+    ora = int(perc / 60)
+    perc = perc % 60
+#---------------------------------------------------------------------------
+#---------------------------------------------------------------------------
+    print('\n\t###############################################')
+    print('\t#   # L # I #  |          #                   #')
+    print('\t# G [   ]   #__|Étkező    #                   #')
+    print('\t#   #####[]##             #    LABIRINTUS     #')
+    print('\t#   [   K   #[ ]###########                   #')
+    print('\t#####     X [   ]  Konyha #                   #')
+    print('\t############# F ###########                   #')
+    print('\t#           # O #                             #')
+    print('\t#           # L #                 HALASTÓ     #')
+    print('\t#           # Y #    Udvar                    #')
+    print('\t#  Csarnok  # O ]                             #')
+    print('\t#           # S #                             #')
+    print('\t#           # Ó ###############   SZIKLÁS     #')
+    print('\t#           [   ]   Pince     #               #')
+    print('\t#############[ ]###############################')
+#---------------------------------------------------------------------------
+    print('\nA könyvtárban vagy.')
     time.sleep(1.5)
     print('A könyvtár a tudás bölcsője.')
     time.sleep(1.5)
@@ -351,6 +982,7 @@ def konyvtar():
             mitCsinalsz = input('Mit csinálsz?: >> ')
             match mitCsinalsz:
                 case '1':
+                    perc += 5
                     os.system('cls')
                     print('Bemutatkozik neked:')
                     time.sleep(1.5)
@@ -371,6 +1003,7 @@ def konyvtar():
                         megnyitas = input('Melyik megnyitást hozod?: >> ')
                         match megnyitas:
                             case '1':
+                                perc += 5
                                 os.system('cls')
                                 print('A Játszma döntetlennel végződik, nem ér semmi baj, de nem haladhatsz tovább sem.')
                                 time.sleep(1.5)
@@ -393,6 +1026,7 @@ def konyvtar():
                                 input("\nHa készen álasz nyomd meg az entert!")
                                 return 'konyvtar'
                             case '3':
+                                perc += 5
                                 os.system('cls')
                                 print('Jól választottál, megnyerted a játékot')
                                 time.sleep(1.5)
@@ -414,16 +1048,61 @@ def konyvtar():
 def etkezo():
     global kaja
     global ehseg
+    global ora
+    global perc
+    perc += 5
     v = 0
     while v != 1 and 2 and 3:
         os.system('cls')
-        print('Megérkeztél az étkezőbe.')
+#---------------------------------------------------------------------------
+        if ora == 23 and perc == 60:
+            print(f'Idő: 00:00')
+        elif ora < 10 and perc < 10:
+            print(f'Idő: 0{ora}:0{perc}')
+        elif ora < 10 and perc >= 10 and perc < 60:
+            print(f'Idő: 0{ora}:{perc}')
+        elif ora >= 10 and perc < 10:
+            print(f'Idő: {ora}:0{perc}')
+        elif ora >= 10 and perc >= 10 and perc < 60:
+            print(f'Idő: {ora}:{perc}')
+        elif ora < 10 and perc == 60:
+            print(f'Idő: 0{ora + 1}:00')
+        elif ora >= 10 and perc == 60:
+            print(f'Idő: {ora + 1}:00')
+        print(f'\nHP: {hp}', end=' ')
+        print(f'\tJózanság: {jozansag}', end=' ')
+        print(f'\t\tÉhség: {ehseg}')
+        print('-----------------------------------------------------------------')
+        perc += ora * 60
+        perc = perc % 1440
+        ora = int(perc / 60)
+        perc = perc % 60
+#---------------------------------------------------------------------------
+#---------------------------------------------------------------------------
+        print('\n\t###############################################')
+        print('\t#   # L # I #  |          #                   #')
+        print('\t# G [   ]   #__|Étkező    #                   #')
+        print('\t#   #####[]## X           #    LABIRINTUS     #')
+        print('\t#   [   K   #[ ]###########                   #')
+        print('\t#####       [   ]  Konyha #                   #')
+        print('\t############# F ###########                   #')
+        print('\t#           # O #                             #')
+        print('\t#           # L #                 HALASTÓ     #')
+        print('\t#           # Y #    Udvar                    #')
+        print('\t#  Csarnok  # O ]                             #')
+        print('\t#           # S #                             #')
+        print('\t#           # Ó ###############   SZIKLÁS     #')
+        print('\t#           [   ]   Pince     #               #')
+        print('\t#############[ ]###############################')
+#---------------------------------------------------------------------------
+        print('\nMegérkeztél az étkezőbe.')
         print('1 >> Jobb kezednél látsz egy asztalt ahová le tudsz ülni.')
         print('2 >> Balra van egy kiszolgáló hely.')
         print('3 >> Vissza a folyosóra')
         v = input('Merre haladsz tovább?: >> ')
         match v:
             case '1':
+                perc += 5
                 if kaja == False:
                     os.system('cls')
                     print('Leültél az asztalhoz viszont nincs mit megenned.')
@@ -444,8 +1123,50 @@ def etkezo():
                     kaja = False
                     return 'etkezo'
             case '2':
+                perc += 5
                 os.system('cls')
-                print('Megérkezel a kiszolgáló helyhez.')
+#---------------------------------------------------------------------------
+                if ora == 23 and perc == 60:
+                    print(f'Idő: 00:00')
+                elif ora < 10 and perc < 10:
+                    print(f'Idő: 0{ora}:0{perc}')
+                elif ora < 10 and perc >= 10 and perc < 60:
+                    print(f'Idő: 0{ora}:{perc}')
+                elif ora >= 10 and perc < 10:
+                    print(f'Idő: {ora}:0{perc}')
+                elif ora >= 10 and perc >= 10 and perc < 60:
+                    print(f'Idő: {ora}:{perc}')
+                elif ora < 10 and perc == 60:
+                    print(f'Idő: 0{ora + 1}:00')
+                elif ora >= 10 and perc == 60:
+                    print(f'Idő: {ora + 1}:00')
+                print(f'\nHP: {hp}', end=' ')
+                print(f'\tJózanság: {jozansag}', end=' ')
+                print(f'\t\tÉhség: {ehseg}')
+                print('-----------------------------------------------------------------')
+                perc += ora * 60
+                perc = perc % 1440
+                ora = int(perc / 60)
+                perc = perc % 60
+#---------------------------------------------------------------------------
+#---------------------------------------------------------------------------
+                print('\n\t###############################################')
+                print('\t#   # L # I #  |X         #                   #')
+                print('\t# G [   ]   #__|Étkező    #                   #')
+                print('\t#   #####[]##             #    LABIRINTUS     #')
+                print('\t#   [   K   #[ ]###########                   #')
+                print('\t#####       [   ]  Konyha #                   #')
+                print('\t############# F ###########                   #')
+                print('\t#           # O #                             #')
+                print('\t#           # L #                 HALASTÓ     #')
+                print('\t#           # Y #    Udvar                    #')
+                print('\t#  Csarnok  # O ]                             #')
+                print('\t#           # S #                             #')
+                print('\t#           # Ó ###############   SZIKLÁS     #')
+                print('\t#           [   ]   Pince     #               #')
+                print('\t#############[ ]###############################')
+#---------------------------------------------------------------------------
+                print('\nMegérkezel a kiszolgáló helyhez.')
                 print('A kiszolgáló, egy szellem, akit Tóth Szalmának hívnak.')
                 print('Arról volt híres, hogy mindig változatosan oszt ételt.')
                 print('1 >> Szeretnéd kockáztatni az ételt?')
@@ -455,6 +1176,7 @@ def etkezo():
                     cselekves = input('Mit csinálsz?: >> ')
                     match cselekves:
                         case '1':
+                            perc += 5
                             esely = random.randint(1,3)
                             if esely == 1:
                                 os.system('cls')
@@ -504,15 +1226,60 @@ def etkezo():
 
 def konyha():
     global kaja
+    global ora
+    global perc
+    perc += 5
     v = 0
     while v != 1 and 2:
         os.system('cls')
-        print('Megérkeztél a konyhába')
+#---------------------------------------------------------------------------
+        if ora == 23 and perc == 60:
+            print(f'Idő: 00:00')
+        elif ora < 10 and perc < 10:
+            print(f'Idő: 0{ora}:0{perc}')
+        elif ora < 10 and perc >= 10 and perc < 60:
+            print(f'Idő: 0{ora}:{perc}')
+        elif ora >= 10 and perc < 10:
+            print(f'Idő: {ora}:0{perc}')
+        elif ora >= 10 and perc >= 10 and perc < 60:
+            print(f'Idő: {ora}:{perc}')
+        elif ora < 10 and perc == 60:
+            print(f'Idő: 0{ora + 1}:00')
+        elif ora >= 10 and perc == 60:
+            print(f'Idő: {ora + 1}:00')
+        print(f'\nHP: {hp}', end=' ')
+        print(f'\tJózanság: {jozansag}', end=' ')
+        print(f'\t\tÉhség: {ehseg}')
+        print('-----------------------------------------------------------------')
+        perc += ora * 60
+        perc = perc % 1440
+        ora = int(perc / 60)
+        perc = perc % 60
+#---------------------------------------------------------------------------
+#---------------------------------------------------------------------------
+        print('\n\t###############################################')
+        print('\t#   # L # I #  |          #                   #')
+        print('\t# G [   ]   #__|Étkező    #                   #')
+        print('\t#   #####[]##             #    LABIRINTUS     #')
+        print('\t#   [   K   #[ ]###########                   #')
+        print('\t#####       [   ]X Konyha #                   #')
+        print('\t############# F ###########                   #')
+        print('\t#           # O #                             #')
+        print('\t#           # L #                 HALASTÓ     #')
+        print('\t#           # Y #    Udvar                    #')
+        print('\t#  Csarnok  # O ]                             #')
+        print('\t#           # S #                             #')
+        print('\t#           # Ó ###############   SZIKLÁS     #')
+        print('\t#           [   ]   Pince     #               #')
+        print('\t#############[ ]###############################')
+#---------------------------------------------------------------------------
+        print('\nMegérkeztél a konyhába')
         print('1 >> Nekiálsz ételt csinálni.')
         print('2 >> Inkább haladok tovább, vissza a folyosóra')
         v = input('Merre haladsz tovább?: >> ')
         match v:
             case '1':
+                perc += 5
                 if kaja == True:
                     os.system('cls')
                     print('Már csináltál ételt.')
@@ -533,10 +1300,54 @@ def konyha():
                 return 'folyoso'
 
 def konyvtarTeljesitett():
+    global ora
+    global perc
+    perc += 5
     v = 0
     while v != 1 and 2 and 3:
         os.system('cls')
-        print('Mivel Sajtost már elverted, ezért tovább haladhatsz.')
+#---------------------------------------------------------------------------
+        if ora == 23 and perc == 60:
+            print(f'Idő: 00:00')
+        elif ora < 10 and perc < 10:
+            print(f'Idő: 0{ora}:0{perc}')
+        elif ora < 10 and perc >= 10 and perc < 60:
+            print(f'Idő: 0{ora}:{perc}')
+        elif ora >= 10 and perc < 10:
+            print(f'Idő: {ora}:0{perc}')
+        elif ora >= 10 and perc >= 10 and perc < 60:
+            print(f'Idő: {ora}:{perc}')
+        elif ora < 10 and perc == 60:
+            print(f'Idő: 0{ora + 1}:00')
+        elif ora >= 10 and perc == 60:
+            print(f'Idő: {ora + 1}:00')
+        print(f'\nHP: {hp}', end=' ')
+        print(f'\tJózanság: {jozansag}', end=' ')
+        print(f'\t\tÉhség: {ehseg}')
+        print('-----------------------------------------------------------------')
+        perc += ora * 60
+        perc = perc % 1440
+        ora = int(perc / 60)
+        perc = perc % 60
+#---------------------------------------------------------------------------
+#---------------------------------------------------------------------------
+        print('\n\t###############################################')
+        print('\t#   # L # I #  |          #                   #')
+        print('\t# G [   ]   #__|Étkező    #                   #')
+        print('\t#   #####[]##             #    LABIRINTUS     #')
+        print('\t#   [   K   #[ ]###########                   #')
+        print('\t#####   X   [   ]  Konyha #                   #')
+        print('\t############# F ###########                   #')
+        print('\t#           # O #                             #')
+        print('\t#           # L #                 HALASTÓ     #')
+        print('\t#           # Y #    Udvar                    #')
+        print('\t#  Csarnok  # O ]                             #')
+        print('\t#           # S #                             #')
+        print('\t#           # Ó ###############   SZIKLÁS     #')
+        print('\t#           [   ]   Pince     #               #')
+        print('\t#############[ ]###############################')
+#---------------------------------------------------------------------------
+        print('\nMivel Sajtost már elverted, ezért tovább haladhatsz.')
         print('Merre haladsz tovább?')
         print('1 >> galéria')
         print('2 >> iroda')
@@ -552,10 +1363,54 @@ def konyvtarTeljesitett():
                 return 'folyoso'
         
 def galeria():
+    global ora
+    global perc
+    perc += 5
     v = 0
     while v != 1 and 2 and 3:
         os.system('cls')
-        print('Megérkeztél a galériába.')
+#---------------------------------------------------------------------------
+        if ora == 23 and perc == 60:
+            print(f'Idő: 00:00')
+        elif ora < 10 and perc < 10:
+            print(f'Idő: 0{ora}:0{perc}')
+        elif ora < 10 and perc >= 10 and perc < 60:
+            print(f'Idő: 0{ora}:{perc}')
+        elif ora >= 10 and perc < 10:
+            print(f'Idő: {ora}:0{perc}')
+        elif ora >= 10 and perc >= 10 and perc < 60:
+            print(f'Idő: {ora}:{perc}')
+        elif ora < 10 and perc == 60:
+            print(f'Idő: 0{ora + 1}:00')
+        elif ora >= 10 and perc == 60:
+            print(f'Idő: {ora + 1}:00')
+        print(f'\nHP: {hp}', end=' ')
+        print(f'\tJózanság: {jozansag}', end=' ')
+        print(f'\t\tÉhség: {ehseg}')
+        print('-----------------------------------------------------------------')
+        perc += ora * 60
+        perc = perc % 1440
+        ora = int(perc / 60)
+        perc = perc % 60
+#---------------------------------------------------------------------------
+#---------------------------------------------------------------------------
+        print('\n\t###############################################')
+        print('\t#   # L # I #  |          #                   #')
+        print('\t# G [   ]   #__|Étkező    #                   #')
+        print('\t#   #####[]##             #    LABIRINTUS     #')
+        print('\t# X [   K   #[ ]###########                   #')
+        print('\t#####       [   ]  Konyha #                   #')
+        print('\t############# F ###########                   #')
+        print('\t#           # O #                             #')
+        print('\t#           # L #                 HALASTÓ     #')
+        print('\t#           # Y #    Udvar                    #')
+        print('\t#  Csarnok  # O ]                             #')
+        print('\t#           # S #                             #')
+        print('\t#           # Ó ###############   SZIKLÁS     #')
+        print('\t#           [   ]   Pince     #               #')
+        print('\t#############[ ]###############################')
+#---------------------------------------------------------------------------
+        print('\nMegérkeztél a galériába.')
         print('3 fele haladhatsz tovább.')
         print('1 >> Lépcsőházba')
         print('2 >> Melletted lévő irodába')
@@ -571,10 +1426,54 @@ def galeria():
 
 def iroda():
     global zseblampa
+    global ora
+    global perc
+    perc += 5
     v = 0
     while v != 1 and 2 and 3:
         os.system('cls')
-        print('Megérkeztél az irodába ')
+#---------------------------------------------------------------------------
+        if ora == 23 and perc == 60:
+            print(f'Idő: 00:00')
+        elif ora < 10 and perc < 10:
+            print(f'Idő: 0{ora}:0{perc}')
+        elif ora < 10 and perc >= 10 and perc < 60:
+            print(f'Idő: 0{ora}:{perc}')
+        elif ora >= 10 and perc < 10:
+            print(f'Idő: {ora}:0{perc}')
+        elif ora >= 10 and perc >= 10 and perc < 60:
+            print(f'Idő: {ora}:{perc}')
+        elif ora < 10 and perc == 60:
+            print(f'Idő: 0{ora + 1}:00')
+        elif ora >= 10 and perc == 60:
+            print(f'Idő: {ora + 1}:00')
+        print(f'\nHP: {hp}', end=' ')
+        print(f'\tJózanság: {jozansag}', end=' ')
+        print(f'\t\tÉhség: {ehseg}')
+        print('-----------------------------------------------------------------')
+        perc += ora * 60
+        perc = perc % 1440
+        ora = int(perc / 60)
+        perc = perc % 60
+#---------------------------------------------------------------------------
+#---------------------------------------------------------------------------
+        print('\n\t###############################################')
+        print('\t#   # L # I #  |          #                   #')
+        print('\t# G [   ] X #__|Étkező    #                   #')
+        print('\t#   #####[]##             #    LABIRINTUS     #')
+        print('\t#   [   K   #[ ]###########                   #')
+        print('\t#####       [   ]  Konyha #                   #')
+        print('\t############# F ###########                   #')
+        print('\t#           # O #                             #')
+        print('\t#           # L #                 HALASTÓ     #')
+        print('\t#           # Y #    Udvar                    #')
+        print('\t#  Csarnok  # O ]                             #')
+        print('\t#           # S #                             #')
+        print('\t#           # Ó ###############   SZIKLÁS     #')
+        print('\t#           [   ]   Pince     #               #')
+        print('\t#############[ ]###############################')
+#---------------------------------------------------------------------------
+        print('\nMegérkeztél az irodába ')
         if zseblampa == False:
             print('Az irodába való megérkezéskor találsz egy zseblámpát.')
             print('Ez még hasznos lehet sötét helyeken.')
@@ -582,6 +1481,48 @@ def iroda():
             input("\nHa készen álasz nyomd meg az entert!")
             return 'iroda'
         else:
+#---------------------------------------------------------------------------
+            if ora == 23 and perc == 60:
+                print(f'Idő: 00:00')
+            elif ora < 10 and perc < 10:
+                print(f'Idő: 0{ora}:0{perc}')
+            elif ora < 10 and perc >= 10 and perc < 60:
+                print(f'Idő: 0{ora}:{perc}')
+            elif ora >= 10 and perc < 10:
+                print(f'Idő: {ora}:0{perc}')
+            elif ora >= 10 and perc >= 10 and perc < 60:
+                print(f'Idő: {ora}:{perc}')
+            elif ora < 10 and perc == 60:
+                print(f'Idő: 0{ora + 1}:00')
+            elif ora >= 10 and perc == 60:
+                print(f'Idő: {ora + 1}:00')
+            print(f'\nHP: {hp}', end=' ')
+            print(f'\tJózanság: {jozansag}', end=' ')
+            print(f'\t\tÉhség: {ehseg}')
+            print('-----------------------------------------------------------------')
+            perc += ora * 60
+            perc = perc % 1440
+            ora = int(perc / 60)
+            perc = perc % 60
+#---------------------------------------------------------------------------
+#---------------------------------------------------------------------------
+            print('\n\t###############################################')
+            print('\t#   # L # I #  |          #                   #')
+            print('\t# G [   ] X #__|Étkező    #                   #')
+            print('\t#   #####[]##             #    LABIRINTUS     #')
+            print('\t#   [   K   #[ ]###########                   #')
+            print('\t#####       [   ]  Konyha #                   #')
+            print('\t############# F ###########                   #')
+            print('\t#           # O #                             #')
+            print('\t#           # L #                 HALASTÓ     #')
+            print('\t#           # Y #    Udvar                    #')
+            print('\t#  Csarnok  # O ]                             #')
+            print('\t#           # S #                             #')
+            print('\t#           # Ó ###############   SZIKLÁS     #')
+            print('\t#           [   ]   Pince     #               #')
+            print('\t#############[ ]###############################')
+#---------------------------------------------------------------------------
+            print('\nMegérkeztél az irodába ')
             print('1 >> Könyvtár')
             print('2 >> Galéria')
             print('3 >> Lépcsőház')
@@ -595,10 +1536,54 @@ def iroda():
                     return 'lepcsohaz'
         
 def lepcsohaz():
+    global ora
+    global perc
+    perc += 5
     v = 0
     while v != 1 and 2 and 3 and 4:
         os.system('cls')
-        print('Megérkeztél a lépcsőházba')
+#---------------------------------------------------------------------------
+        if ora == 23 and perc == 60:
+            print(f'Idő: 00:00')
+        elif ora < 10 and perc < 10:
+            print(f'Idő: 0{ora}:0{perc}')
+        elif ora < 10 and perc >= 10 and perc < 60:
+            print(f'Idő: 0{ora}:{perc}')
+        elif ora >= 10 and perc < 10:
+            print(f'Idő: {ora}:0{perc}')
+        elif ora >= 10 and perc >= 10 and perc < 60:
+            print(f'Idő: {ora}:{perc}')
+        elif ora < 10 and perc == 60:
+            print(f'Idő: 0{ora + 1}:00')
+        elif ora >= 10 and perc == 60:
+            print(f'Idő: {ora + 1}:00')
+        print(f'\nHP: {hp}', end=' ')
+        print(f'\tJózanság: {jozansag}', end=' ')
+        print(f'\t\tÉhség: {ehseg}')
+        print('-----------------------------------------------------------------')
+        perc += ora * 60
+        perc = perc % 1440
+        ora = int(perc / 60)
+        perc = perc % 60
+#---------------------------------------------------------------------------
+#---------------------------------------------------------------------------
+        print('\n\t###############################################')
+        print('\t#   # L # I #  |          #                   #')
+        print('\t# G [ X ]   #__|Étkező    #                   #')
+        print('\t#   #####[]##             #    LABIRINTUS     #')
+        print('\t#   [   K   #[ ]###########                   #')
+        print('\t#####       [   ]  Konyha #                   #')
+        print('\t############# F ###########                   #')
+        print('\t#           # O #                             #')
+        print('\t#           # L #                 HALASTÓ     #')
+        print('\t#           # Y #    Udvar                    #')
+        print('\t#  Csarnok  # O ]                             #')
+        print('\t#           # S #                             #')
+        print('\t#           # Ó ###############   SZIKLÁS     #')
+        print('\t#           [   ]   Pince     #               #')
+        print('\t#############[ ]###############################')
+#---------------------------------------------------------------------------
+        print('\nMegérkeztél a lépcsőházba')
         print('1 >> Innen mehetsz felfele az 1. emeletre')
         print('2 >> Padlás')
         print('3 >> Iroda')
@@ -615,10 +1600,48 @@ def lepcsohaz():
                 return 'galeria'
 
 def elsoEmelet():
+    global ora
+    global perc
+    perc += 5
     v = 0
     while 1 and 2 and 3:
         os.system('cls')
-        print('Megérkeztél az első emeletre.')
+#---------------------------------------------------------------------------
+        if ora == 23 and perc == 60:
+            print(f'Idő: 00:00')
+        elif ora < 10 and perc < 10:
+            print(f'Idő: 0{ora}:0{perc}')
+        elif ora < 10 and perc >= 10 and perc < 60:
+            print(f'Idő: 0{ora}:{perc}')
+        elif ora >= 10 and perc < 10:
+            print(f'Idő: {ora}:0{perc}')
+        elif ora >= 10 and perc >= 10 and perc < 60:
+            print(f'Idő: {ora}:{perc}')
+        elif ora < 10 and perc == 60:
+            print(f'Idő: 0{ora + 1}:00')
+        elif ora >= 10 and perc == 60:
+            print(f'Idő: {ora + 1}:00')
+        print(f'\nHP: {hp}', end=' ')
+        print(f'\tJózanság: {jozansag}', end=' ')
+        print(f'\t\tÉhség: {ehseg}')
+        print('-----------------------------------------------------------------')
+        perc += ora * 60
+        perc = perc % 1440
+        ora = int(perc / 60)
+        perc = perc % 60
+#---------------------------------------------------------------------------
+#---------------------------------------------------------------------------
+        print('\n\t#######################')
+        print('\t#   L    #            #')
+        print('\t#######]##     H      #')
+        print('\t# M  [ X ]     Á      #')
+        print('\t# O  #####     L      #')
+        print('\t# S  #         Ó      #')
+        print('\t# D  ]                #')
+        print('\t# Ó  #                #')
+        print('\t#######################')
+#---------------------------------------------------------------------------
+        print('\nMegérkeztél az első emeletre.')
         print('Egy folyosóval álsz újra szemben ahol további két ajtó van.')
         print('1 >> Jobb kezednél egy háloszobába vezető ajtót látsz.')
         print('2 >> Bal kezednél van egy mosdóba vezető ajtót látsz.')
@@ -637,9 +1660,47 @@ def padlas():
     global zseblampa
     global jozansag
     global labirintusKod
+    global ora
+    global perc
+    perc += 5
     if zseblampa == False:
         os.system('cls')
-        print('Elkezdesz fálmászni a létrán.')
+#---------------------------------------------------------------------------
+        if ora == 23 and perc == 60:
+            print(f'Idő: 00:00')
+        elif ora < 10 and perc < 10:
+            print(f'Idő: 0{ora}:0{perc}')
+        elif ora < 10 and perc >= 10 and perc < 60:
+            print(f'Idő: 0{ora}:{perc}')
+        elif ora >= 10 and perc < 10:
+            print(f'Idő: {ora}:0{perc}')
+        elif ora >= 10 and perc >= 10 and perc < 60:
+            print(f'Idő: {ora}:{perc}')
+        elif ora < 10 and perc == 60:
+            print(f'Idő: 0{ora + 1}:00')
+        elif ora >= 10 and perc == 60:
+            print(f'Idő: {ora + 1}:00')
+        print(f'\nHP: {hp}', end=' ')
+        print(f'\tJózanság: {jozansag}', end=' ')
+        print(f'\t\tÉhség: {ehseg}')
+        print('-----------------------------------------------------------------')
+        perc += ora * 60
+        perc = perc % 1440
+        ora = int(perc / 60)
+        perc = perc % 60
+#---------------------------------------------------------------------------
+#---------------------------------------------------------------------------
+        print('\n\t#######################')
+        print('\t#    # L #            #')
+        print('\t#    #[X]#            #')
+        print('\t#                     #')
+        print('\t#      PADLÁS         #')
+        print('\t#                     #')
+        print('\t#                     #')
+        print('\t#                     #')
+        print('\t#######################')
+#---------------------------------------------------------------------------
+        print('\nElkezdesz fálmászni a létrán.')
         time.sleep(1.5)
         print('Felértél.')
         time.sleep(1.5)
@@ -659,7 +1720,42 @@ def padlas():
         return 'lepcsohaz'
     else:
         os.system('cls')
-        print('Elkezdesz fálmászni a létrán.')
+#---------------------------------------------------------------------------
+        if ora == 23 and perc == 60:
+            print(f'Idő: 00:00')
+        elif ora < 10 and perc < 10:
+            print(f'Idő: 0{ora}:0{perc}')
+        elif ora < 10 and perc >= 10 and perc < 60:
+            print(f'Idő: 0{ora}:{perc}')
+        elif ora >= 10 and perc < 10:
+            print(f'Idő: {ora}:0{perc}')
+        elif ora >= 10 and perc >= 10 and perc < 60:
+            print(f'Idő: {ora}:{perc}')
+        elif ora < 10 and perc == 60:
+            print(f'Idő: 0{ora + 1}:00')
+        elif ora >= 10 and perc == 60:
+            print(f'Idő: {ora + 1}:00')
+        print(f'\nHP: {hp}', end=' ')
+        print(f'\tJózanság: {jozansag}', end=' ')
+        print(f'\t\tÉhség: {ehseg}')
+        print('-----------------------------------------------------------------')
+        perc += ora * 60
+        perc = perc % 1440
+        ora = int(perc / 60)
+        perc = perc % 60
+#---------------------------------------------------------------------------
+#---------------------------------------------------------------------------
+        print('\n\t#######################')
+        print('\t#  | # L #            #')
+        print('\t#  | #[ ]#            #')
+        print('\t#  |                  #')
+        print('\t#  |X  PADLÁS         #')
+        print('\t#  |                  #')
+        print('\t#  |      __          #')
+        print('\t#  |     |  |         #')
+        print('\t#######################')
+#---------------------------------------------------------------------------
+        print('\nElkezdesz fálmászni a létrán.')
         print('Felértél.')
         print('Rettentő sötét van, de mivel volt lámpád felkapcsolod azt.')
         print('1 >> Jobboldalon látsz egy könyvespolcot')
@@ -671,8 +1767,44 @@ def padlas():
             v = input('Merre haladsz tovább?: >> ')
             match v:
                 case '1':
+                    perc += 5
                     os.system('cls')
-                    print('Elkezdesz kutatni és találsz egy könyvet.')
+#---------------------------------------------------------------------------
+                    if ora == 23 and perc == 60:
+                        print(f'Idő: 00:00')
+                    elif ora < 10 and perc < 10:
+                        print(f'Idő: 0{ora}:0{perc}')
+                    elif ora < 10 and perc >= 10 and perc < 60:
+                        print(f'Idő: 0{ora}:{perc}')
+                    elif ora >= 10 and perc < 10:
+                        print(f'Idő: {ora}:0{perc}')
+                    elif ora >= 10 and perc >= 10 and perc < 60:
+                        print(f'Idő: {ora}:{perc}')
+                    elif ora < 10 and perc == 60:
+                        print(f'Idő: 0{ora + 1}:00')
+                    elif ora >= 10 and perc == 60:
+                        print(f'Idő: {ora + 1}:00')
+                    print(f'\nHP: {hp}', end=' ')
+                    print(f'\tJózanság: {jozansag}', end=' ')
+                    print(f'\t\tÉhség: {ehseg}')
+                    print('-----------------------------------------------------------------')
+                    perc += ora * 60
+                    perc = perc % 1440
+                    ora = int(perc / 60)
+                    perc = perc % 60
+#---------------------------------------------------------------------------
+#---------------------------------------------------------------------------
+                    print('\n\t#######################')
+                    print('\t#  | # L #            #')
+                    print('\t#  | #[ ]#          __#')
+                    print('\t#  |               |0 #')
+                    print('\t#  |X  PADLÁS      |__#')
+                    print('\t#  |                  #')
+                    print('\t#  |      __          #')
+                    print('\t#  |     |  |         #')
+                    print('\t#######################')
+#---------------------------------------------------------------------------
+                    print('\nElkezdesz kutatni és találsz egy könyvet.')
                     print('Ki akarod nyitni a könyvet?')
                     print('1 >> Beleolvasol')
                     print('2 >> Hagyod inkább')
@@ -681,6 +1813,7 @@ def padlas():
                         cselekves = input('Mit csinálsz?: >> ')
                         match cselekves:
                             case '1':
+                                perc += 5
                                 os.system('cls')
                                 print('Elkezdesz beleolvasni.')
                                 time.sleep(1.5)
@@ -694,7 +1827,43 @@ def padlas():
                                 return 'padlas'
                 case '2':
                     os.system('cls')
-                    print('Rengeteg cuccot látsz')
+                    perc += 5
+#---------------------------------------------------------------------------
+                    if ora == 23 and perc == 60:
+                        print(f'Idő: 00:00')
+                    elif ora < 10 and perc < 10:
+                        print(f'Idő: 0{ora}:0{perc}')
+                    elif ora < 10 and perc >= 10 and perc < 60:
+                        print(f'Idő: 0{ora}:{perc}')
+                    elif ora >= 10 and perc < 10:
+                        print(f'Idő: {ora}:0{perc}')
+                    elif ora >= 10 and perc >= 10 and perc < 60:
+                        print(f'Idő: {ora}:{perc}')
+                    elif ora < 10 and perc == 60:
+                        print(f'Idő: 0{ora + 1}:00')
+                    elif ora >= 10 and perc == 60:
+                        print(f'Idő: {ora + 1}:00')
+                    print(f'\nHP: {hp}', end=' ')
+                    print(f'\tJózanság: {jozansag}', end=' ')
+                    print(f'\t\tÉhség: {ehseg}')
+                    print('-----------------------------------------------------------------')
+                    perc += ora * 60
+                    perc = perc % 1440
+                    ora = int(perc / 60)
+                    perc = perc % 60
+#---------------------------------------------------------------------------
+#---------------------------------------------------------------------------
+                    print('\n\t#######################')
+                    print('\t#  | # L #            #')
+                    print('\t#  | #[ ]#          __#')
+                    print('\t#  |               |0 #')
+                    print('\t#  |   PADLÁS      |__#')
+                    print('\t#  |                  #')
+                    print('\t#  |     X__          #')
+                    print('\t#  |     |  |         #')
+                    print('\t#######################')
+#---------------------------------------------------------------------------
+                    print('\nRengeteg cuccot látsz')
                     print('1 >> Neki állsz kotorni')
                     print('2 >> Inkább hagyod')
                     cselekves = 0
@@ -702,6 +1871,7 @@ def padlas():
                         cselekves = input('Mit csinálsz?: >> ')
                         match cselekves:
                             case '1':
+                                perc += 5
                                 os.system('cls')
                                 print('Elkezdesz kotorni.')
                                 time.sleep(1.5)
@@ -727,6 +1897,7 @@ def padlas():
                                     cselekves = input('Mit csinálsz?: >> ')
                                     match cselekves:
                                         case '1':
+                                            perc += 5
                                             os.system('cls')
                                             print('Tovább kotorva egy újabb patkányt talász.')
                                             time.sleep(1.5)
@@ -751,6 +1922,7 @@ def padlas():
                                                 cselekves = input('Mit csinálsz?: >> ')
                                                 match cselekves:
                                                     case '1':
+                                                        perc += 5
                                                         os.system('cls')
                                                         print('Találsz egy dobozt.')
                                                         print('1 >> Kinyitod')
@@ -760,6 +1932,7 @@ def padlas():
                                                             cselekves = input('Mit csinálsz?: >> ')
                                                             match cselekves:
                                                                 case '1':
+                                                                    perc += 5
                                                                     os.system('cls')
                                                                     print('Elkezded kinyitni a dobozt')
                                                                     time.sleep(1.5)
@@ -782,7 +1955,43 @@ def padlas():
                                 return 'padlas'
                 case '3':
                     os.system('cls')
-                    print('Oda érsz a törött tükörhöz.')
+                    perc += 5
+#---------------------------------------------------------------------------
+                    if ora == 23 and perc == 60:
+                        print(f'Idő: 00:00')
+                    elif ora < 10 and perc < 10:
+                        print(f'Idő: 0{ora}:0{perc}')
+                    elif ora < 10 and perc >= 10 and perc < 60:
+                        print(f'Idő: 0{ora}:{perc}')
+                    elif ora >= 10 and perc < 10:
+                        print(f'Idő: {ora}:0{perc}')
+                    elif ora >= 10 and perc >= 10 and perc < 60:
+                        print(f'Idő: {ora}:{perc}')
+                    elif ora < 10 and perc == 60:
+                        print(f'Idő: 0{ora + 1}:00')
+                    elif ora >= 10 and perc == 60:
+                        print(f'Idő: {ora + 1}:00')
+                    print(f'\nHP: {hp}', end=' ')
+                    print(f'\tJózanság: {jozansag}', end=' ')
+                    print(f'\t\tÉhség: {ehseg}')
+                    print('-----------------------------------------------------------------')
+                    perc += ora * 60
+                    perc = perc % 1440
+                    ora = int(perc / 60)
+                    perc = perc % 60
+#---------------------------------------------------------------------------
+#---------------------------------------------------------------------------
+                    print('\n\t#######################')
+                    print('\t#  | # L #            #')
+                    print('\t#  | #[ ]#          __#')
+                    print('\t#  |              X|0 #')
+                    print('\t#  |   PADLÁS      |__#')
+                    print('\t#  |                  #')
+                    print('\t#  |      __          #')
+                    print('\t#  |     |  |         #')
+                    print('\t#######################')
+#---------------------------------------------------------------------------
+                    print('\nOda érsz a törött tükörhöz.')
                     time.sleep(1.5)
                     print('1 >> Belenézel')
                     time.sleep(1.5)
@@ -792,6 +2001,7 @@ def padlas():
                         cselekves = input('Mit csinálsz?: >> ')
                         match cselekves:
                             case '1':
+                                perc += 5
                                 os.system('cls')
                                 print('Rávilágítasz a tükörre és belenézel.')
                                 time.sleep(1.5)
@@ -810,8 +2020,44 @@ def padlas():
                             case '2':
                                 return 'padlas'
                 case '4':
+                    perc += 5
                     os.system('cls')
-                    print('Épp mászol lefelé és kialszik a zseblámpád fénye.')
+#---------------------------------------------------------------------------
+                    if ora == 23 and perc == 60:
+                        print(f'Idő: 00:00')
+                    elif ora < 10 and perc < 10:
+                        print(f'Idő: 0{ora}:0{perc}')
+                    elif ora < 10 and perc >= 10 and perc < 60:
+                        print(f'Idő: 0{ora}:{perc}')
+                    elif ora >= 10 and perc < 10:
+                        print(f'Idő: {ora}:0{perc}')
+                    elif ora >= 10 and perc >= 10 and perc < 60:
+                        print(f'Idő: {ora}:{perc}')
+                    elif ora < 10 and perc == 60:
+                        print(f'Idő: 0{ora + 1}:00')
+                    elif ora >= 10 and perc == 60:
+                        print(f'Idő: {ora + 1}:00')
+                    print(f'\nHP: {hp}', end=' ')
+                    print(f'\tJózanság: {jozansag}', end=' ')
+                    print(f'\t\tÉhség: {ehseg}')
+                    print('-----------------------------------------------------------------')
+                    perc += ora * 60
+                    perc = perc % 1440
+                    ora = int(perc / 60)
+                    perc = perc % 60
+#---------------------------------------------------------------------------
+#---------------------------------------------------------------------------
+                    print('\n\t#######################')
+                    print('\t#  | # X #            #')
+                    print('\t#  | #[ ]#          __#')
+                    print('\t#  |               |0 #')
+                    print('\t#  |   PADLÁS      |__#')
+                    print('\t#  |                  #')
+                    print('\t#  |      __          #')
+                    print('\t#  |     |  |         #')
+                    print('\t#######################')
+#---------------------------------------------------------------------------
+                    print('\nÉpp mászol lefelé és kialszik a zseblámpád fénye.')
                     time.sleep(3)
                     zseblampa = False
                     input("\nHa készen álasz nyomd meg az entert!")
@@ -844,7 +2090,46 @@ def padlas():
                             return 'lepcsohaz'
                         """
 def haloszoba():
-    print('Megérkeztél a hálószobába')
+    global ora
+    global perc
+    perc += 5
+    os.system('cls')
+#---------------------------------------------------------------------------
+    if ora == 23 and perc == 60:
+        print(f'Idő: 00:00')
+    elif ora < 10 and perc < 10:
+        print(f'Idő: 0{ora}:0{perc}')
+    elif ora < 10 and perc >= 10 and perc < 60:
+        print(f'Idő: 0{ora}:{perc}')
+    elif ora >= 10 and perc < 10:
+        print(f'Idő: {ora}:0{perc}')
+    elif ora >= 10 and perc >= 10 and perc < 60:
+        print(f'Idő: {ora}:{perc}')
+    elif ora < 10 and perc == 60:
+        print(f'Idő: 0{ora + 1}:00')
+    elif ora >= 10 and perc == 60:
+        print(f'Idő: {ora + 1}:00')
+    print(f'\nHP: {hp}', end=' ')
+    print(f'\tJózanság: {jozansag}', end=' ')
+    print(f'\t\tÉhség: {ehseg}')
+    print('-----------------------------------------------------------------')
+    perc += ora * 60
+    perc = perc % 1440
+    ora = int(perc / 60)
+    perc = perc % 60
+#---------------------------------------------------------------------------
+#---------------------------------------------------------------------------
+    print('\n\t#######################')
+    print('\t#   L    #            #')
+    print('\t#######]##     H      #')
+    print('\t# M  [   ]     Á      #')
+    print('\t# O  #####  X  L      #')
+    print('\t# S  #         Ó      #')
+    print('\t# D  ]                #')
+    print('\t# Ó  #                #')
+    print('\t#######################')
+#---------------------------------------------------------------------------
+    print('\nMegérkeztél a hálószobába')
     print('1 >> Látsz egy kis ajtót ami átvezet a mosdóba')
     print('2 >> Vissza a folyosóra')
     v = 0
@@ -860,7 +2145,46 @@ def mosdo():
     global hp
     global jozansag
     global teleHas
-    print('Megérkeztél a mosdóba')
+    global ora
+    global perc
+    perc += 5
+    os.system('cls')
+#---------------------------------------------------------------------------
+    if ora == 23 and perc == 60:
+        print(f'Idő: 00:00')
+    elif ora < 10 and perc < 10:
+        print(f'Idő: 0{ora}:0{perc}')
+    elif ora < 10 and perc >= 10 and perc < 60:
+        print(f'Idő: 0{ora}:{perc}')
+    elif ora >= 10 and perc < 10:
+        print(f'Idő: {ora}:0{perc}')
+    elif ora >= 10 and perc >= 10 and perc < 60:
+        print(f'Idő: {ora}:{perc}')
+    elif ora < 10 and perc == 60:
+        print(f'Idő: 0{ora + 1}:00')
+    elif ora >= 10 and perc == 60:
+        print(f'Idő: {ora + 1}:00')
+    print(f'\nHP: {hp}', end=' ')
+    print(f'\tJózanság: {jozansag}', end=' ')
+    print(f'\t\tÉhség: {ehseg}')
+    print('-----------------------------------------------------------------')
+    perc += ora * 60
+    perc = perc % 1440
+    ora = int(perc / 60)
+    perc = perc % 60
+#---------------------------------------------------------------------------
+#---------------------------------------------------------------------------
+    print('\n\t#######################')
+    print('\t#   L    #            #')
+    print('\t#######]##     H      #')
+    print('\t# M X[   ]     Á      #')
+    print('\t# O  #####     L      #')
+    print('\t# S  #         Ó      #')
+    print('\t# D  ]                #')
+    print('\t# Ó  #                #')
+    print('\t#######################')
+#---------------------------------------------------------------------------
+    print('\nMegérkeztél a mosdóba')
     print('1 >> Látsz egy kis ajtót ami átvezet a hálószobába')
     print('2 >> Hásználod a wc-t')
     print('3 >> Vissza a folyosóra')
@@ -871,6 +2195,7 @@ def mosdo():
             case '1':
                 return 'haloszoba'
             case '2':
+                perc += 5
                 if teleHas == True:
                     print('Elkezdesz leülni a wcre.')
                     time.sleep(1.5)
@@ -903,7 +2228,7 @@ def mosdo():
                     input("\nHa készen álasz nyomd meg az entert!")
                     return 'mosdo'
             case '3':
-                return ''
+                return 'elsoEmelet'
 
 hely = foBejarat()
 while hely != 'kijarat':
