@@ -19,8 +19,6 @@ teleHas = False
 ora = 19
 perc = 00
 
-
-
 os.system('cls')
 def slowPrint(string, speed=0.05):
     for char in string:
@@ -28,7 +26,7 @@ def slowPrint(string, speed=0.05):
         sys.stdout.flush()
         time.sleep(speed)
 
-slowPrint('1925-ben, egy hideg téli este, a falu szélén magasodott az elhagyatott kastély. A vidék fehér hóval volt bevonva, és a kastély sötét, hátborzongató alakja feltűnt a horizonton. Az épület régóta lakatlan volt, és hosszú ideje tartották hírhedtnek a helyiek. A rémtörténetek egytől-egyig sötét eseményekről szóltak, amelyek itt zajlottak, és az emberek úgy érezték, hogy a kastély titokzatos erőket rejteget. Most, a hóesésben, az emberek újra hallották a kastély suttogásait, és az idő eljött, hogy felderítsék a múlt sötét rejtélyeit. Az elhagyatott kastély magasodott a téli éjszaka közepén, készen arra, hogy felfedezzék a titkait, mielőtt a borzalmak újra elszabadulnak, és bekebelezik az éjszakát. Az elhagyatott kastély falai tele vannak titkokkal, és most a te feladatod felfedezni ezt a sötét és rejtélyes helyet. Amint belépsz a főbejáraton az ajtó mögötted örökre becsukódik.', 0.0001)
+slowPrint('1925-ben, egy hideg téli este, a falu szélén magasodott az elhagyatott kastély. A vidék fehér hóval volt bevonva, és a kastély sötét, hátborzongató alakja feltűnt a horizonton. Az épület régóta lakatlan volt, és hosszú ideje tartották hírhedtnek a helyiek. A rémtörténetek egytől-egyig sötét eseményekről szóltak, amelyek itt zajlottak, és az emberek úgy érezték, hogy a kastély titokzatos erőket rejteget. Most, a hóesésben, az emberek újra hallották a kastély suttogásait, és az idő eljött, hogy felderítsék a múlt sötét rejtélyeit. Az elhagyatott kastély magasodott a téli éjszaka közepén, készen arra, hogy felfedezzék a titkait, mielőtt a borzalmak újra elszabadulnak, és bekebelezik az éjszakát. Az elhagyatott kastély falai tele vannak titkokkal, és most a te feladatod felfedezni ezt a sötét és rejtélyes helyet. Amint belépsz a főbejáraton az ajtó mögötted örökre becsukódik.', 0.04)
 
 input("\n\nHa készen álasz nyomd meg az entert!")
 os.system('cls')
@@ -261,7 +259,29 @@ def pince():
                                 print('Mivel akartad legyőzni a szellemet?')
                                 time.sleep(1.5)
                                 print('Meghaltál, a játéknak vége')
-                                time.sleep(1.5)
+                                print('                          _____  _____')
+                                print('                         <     `/     |')
+                                print('                          >          (')
+                                print('                         |   _     _  |')
+                                print('                         |  |_) | |_) |')
+                                print('                         |  | \ | |   |')
+                                print('                         |            |')
+                                print('          ______.______%_|            |__________  _____')
+                                print('        _/                                       \|     |')
+                                print('       |                 Kedves Kalandor               <')
+                                print('       |_____.-._________              ____/|___________|')
+                                print('                         | * fi/ll/in |')
+                                print('                         | + 15/11/25 |')
+                                print('                         |            |')
+                                print('                         |            |')
+                                print('                         |   _        <')
+                                print('                         |__/         |')
+                                print('                          / `--.      |')
+                                print('                        %|            |%')
+                                print('                    |/.%%|          -< @%%%')
+                                print('                    `\%`@|     v      |@@%@%%    - mfj')
+                                print('                  .%%%@@@|%    |    % @@@%%@%%%%')
+                                print('             _.%%%%%%@@@@@@%%_/%\_%@@%%@@@@@@@%%%%%%')
                                 return 'kijarat'
                         case '2':
                             perc += 5
@@ -277,6 +297,29 @@ def pince():
                                 pass
                             else:
                                 print('Meghaltál')
+                                print('                          _____  _____')
+                                print('                         <     `/     |')
+                                print('                          >          (')
+                                print('                         |   _     _  |')
+                                print('                         |  |_) | |_) |')
+                                print('                         |  | \ | |   |')
+                                print('                         |            |')
+                                print('          ______.______%_|            |__________  _____')
+                                print('        _/                                       \|     |')
+                                print('       |                 Kedves Kalandor               <')
+                                print('       |_____.-._________              ____/|___________|')
+                                print('                         | * fi/ll/in |')
+                                print('                         | + 15/11/25 |')
+                                print('                         |            |')
+                                print('                         |            |')
+                                print('                         |   _        <')
+                                print('                         |__/         |')
+                                print('                          / `--.      |')
+                                print('                        %|            |%')
+                                print('                    |/.%%|          -< @%%%')
+                                print('                    `\%`@|     v      |@@%@%%    - mfj')
+                                print('                  .%%%@@@|%    |    % @@@%%@%%%%')
+                                print('             _.%%%%%%@@@@@@%%_/%\_%@@%%@@@@@@@%%%%%%')
                                 return 'kijarat'
                             input("\nHa készen álasz nyomd meg az entert!")
                             return 'pince'
@@ -363,6 +406,29 @@ def pince():
                                     pass
                                 else:
                                     print('Meghaltál')
+                                    print('                          _____  _____')
+                                    print('                         <     `/     |')
+                                    print('                          >          (')
+                                    print('                         |   _     _  |')
+                                    print('                         |  |_) | |_) |')
+                                    print('                         |  | \ | |   |')
+                                    print('                         |            |')
+                                    print('          ______.______%_|            |__________  _____')
+                                    print('        _/                                       \|     |')
+                                    print('       |                 Kedves Kalandor               <')
+                                    print('       |_____.-._________              ____/|___________|')
+                                    print('                         | * fi/ll/in |')
+                                    print('                         | + 15/11/25 |')
+                                    print('                         |            |')
+                                    print('                         |            |')
+                                    print('                         |   _        <')
+                                    print('                         |__/         |')
+                                    print('                          / `--.      |')
+                                    print('                        %|            |%')
+                                    print('                    |/.%%|          -< @%%%')
+                                    print('                    `\%`@|     v      |@@%@%%    - mfj')
+                                    print('                  .%%%@@@|%    |    % @@@%%@%%%%')
+                                    print('             _.%%%%%%@@@@@@%%_/%\_%@@%%@@@@@@@%%%%%%')
                                     return 'kijarat'
                                 input("\nHa készen álasz nyomd meg az entert!")
                                 return 'pince'
@@ -497,20 +563,13 @@ def udvar():
     print('\t#           [   ]   Pince     #               #')
     print('\t#############[ ]###############################')
 #---------------------------------------------------------------------------
-    print('\nKiértél az udvarra.')
-    time.sleep(1.5)
+    print('\nAz udvaron vagy.')
     print('Rettentő sötét van és nem látsz a távolba.')
-    time.sleep(1.5)
     print('Csak 3 utat látsz.')
-    time.sleep(1.5)
     print('1 >> Jobbra')
-    #time.sleep(1.5)
     print('2 >> Egyenesen')
-    #time.sleep(1.5)
     print('3 >> Balra')
-    #time.sleep(1.5)
     print('4 >> Inkább vissza megyek a folyosóra és vissza jövök később')
-    #time.sleep(1.5)
     v = 0
     while v != 1 and 2 and 3 and 4:
         v = input('Merre haladsz tovább?: >> ')
@@ -1021,6 +1080,29 @@ def konyvtar():
                                     pass
                                 else:
                                     print('Meghaltál')
+                                    print('                          _____  _____')
+                                    print('                         <     `/     |')
+                                    print('                          >          (')
+                                    print('                         |   _     _  |')
+                                    print('                         |  |_) | |_) |')
+                                    print('                         |  | \ | |   |')
+                                    print('                         |            |')
+                                    print('          ______.______%_|            |__________  _____')
+                                    print('        _/                                       \|     |')
+                                    print('       |                 Kedves Kalandor               <')
+                                    print('       |_____.-._________              ____/|___________|')
+                                    print('                         | * fi/ll/in |')
+                                    print('                         | + 15/11/25 |')
+                                    print('                         |            |')
+                                    print('                         |            |')
+                                    print('                         |   _        <')
+                                    print('                         |__/         |')
+                                    print('                          / `--.      |')
+                                    print('                        %|            |%')
+                                    print('                    |/.%%|          -< @%%%')
+                                    print('                    `\%`@|     v      |@@%@%%    - mfj')
+                                    print('                  .%%%@@@|%    |    % @@@%%@%%%%')
+                                    print('             _.%%%%%%@@@@@@%%_/%\_%@@%%@@@@@@@%%%%%%')
                                     return 'kijarat'
                                 input("\nHa készen álasz nyomd meg az entert!")
                                 return 'konyvtar'
@@ -1478,8 +1560,10 @@ def iroda():
             print('Ez még hasznos lehet sötét helyeken.')
             zseblampa = True
             input("\nHa készen álasz nyomd meg az entert!")
+            os.system('cls')
             return 'iroda'
         else:
+            os.system('cls')
 #---------------------------------------------------------------------------
             if ora == 23 and perc == 60:
                 print(f'Idő: 00:00')
@@ -1714,6 +1798,29 @@ def padlas():
             pass
         else:
             print('Meghaltál')
+            print('                          _____  _____')
+            print('                         <     `/     |')
+            print('                          >          (')
+            print('                         |   _     _  |')
+            print('                         |  |_) | |_) |')
+            print('                         |  | \ | |   |')
+            print('                         |            |')
+            print('          ______.______%_|            |__________  _____')
+            print('        _/                                       \|     |')
+            print('       |                 Kedves Kalandor               <')
+            print('       |_____.-._________              ____/|___________|')
+            print('                         | * fi/ll/in |')
+            print('                         | + 15/11/25 |')
+            print('                         |            |')
+            print('                         |            |')
+            print('                         |   _        <')
+            print('                         |__/         |')
+            print('                          / `--.      |')
+            print('                        %|            |%')
+            print('                    |/.%%|          -< @%%%')
+            print('                    `\%`@|     v      |@@%@%%    - mfj')
+            print('                  .%%%@@@|%    |    % @@@%%@%%%%')
+            print('             _.%%%%%%@@@@@@%%_/%\_%@@%%@@@@@@@%%%%%%')
             return 'kijarat'
         input("\nHa készen álasz nyomd meg az entert!")
         return 'lepcsohaz'
@@ -1884,6 +1991,29 @@ def padlas():
                                     pass
                                 else:
                                     print('Meghaltál')
+                                    print('                          _____  _____')
+                                    print('                         <     `/     |')
+                                    print('                          >          (')
+                                    print('                         |   _     _  |')
+                                    print('                         |  |_) | |_) |')
+                                    print('                         |  | \ | |   |')
+                                    print('                         |            |')
+                                    print('          ______.______%_|            |__________  _____')
+                                    print('        _/                                       \|     |')
+                                    print('       |                 Kedves Kalandor               <')
+                                    print('       |_____.-._________              ____/|___________|')
+                                    print('                         | * fi/ll/in |')
+                                    print('                         | + 15/11/25 |')
+                                    print('                         |            |')
+                                    print('                         |            |')
+                                    print('                         |   _        <')
+                                    print('                         |__/         |')
+                                    print('                          / `--.      |')
+                                    print('                        %|            |%')
+                                    print('                    |/.%%|          -< @%%%')
+                                    print('                    `\%`@|     v      |@@%@%%    - mfj')
+                                    print('                  .%%%@@@|%    |    % @@@%%@%%%%')
+                                    print('             _.%%%%%%@@@@@@%%_/%\_%@@%%@@@@@@@%%%%%%')
                                     return 'kijarat'
                                 time.sleep(1.5)
                                 input("\nHa készen álasz nyomd meg az entert!")
@@ -1910,6 +2040,29 @@ def padlas():
                                                 pass
                                             else:
                                                 print('Meghaltál')
+                                                print('                          _____  _____')
+                                                print('                         <     `/     |')
+                                                print('                          >          (')
+                                                print('                         |   _     _  |')
+                                                print('                         |  |_) | |_) |')
+                                                print('                         |  | \ | |   |')
+                                                print('                         |            |')
+                                                print('          ______.______%_|            |__________  _____')
+                                                print('        _/                                       \|     |')
+                                                print('       |                 Kedves Kalandor               <')
+                                                print('       |_____.-._________              ____/|___________|')
+                                                print('                         | * fi/ll/in |')
+                                                print('                         | + 15/11/25 |')
+                                                print('                         |            |')
+                                                print('                         |            |')
+                                                print('                         |   _        <')
+                                                print('                         |__/         |')
+                                                print('                          / `--.      |')
+                                                print('                        %|            |%')
+                                                print('                    |/.%%|          -< @%%%')
+                                                print('                    `\%`@|     v      |@@%@%%    - mfj')
+                                                print('                  .%%%@@@|%    |    % @@@%%@%%%%')
+                                                print('             _.%%%%%%@@@@@@%%_/%\_%@@%%@@@@@@@%%%%%%')
                                                 return 'kijarat'
                                             input("\nHa készen álasz nyomd meg az entert!")
                                             os.system('cls')
@@ -2012,10 +2165,33 @@ def padlas():
                                     pass
                                 else:
                                     print('Meghaltál')
+                                    print('                          _____  _____')
+                                    print('                         <     `/     |')
+                                    print('                          >          (')
+                                    print('                         |   _     _  |')
+                                    print('                         |  |_) | |_) |')
+                                    print('                         |  | \ | |   |')
+                                    print('                         |            |')
+                                    print('          ______.______%_|            |__________  _____')
+                                    print('        _/                                       \|     |')
+                                    print('       |                 Kedves Kalandor               <')
+                                    print('       |_____.-._________              ____/|___________|')
+                                    print('                         | * fi/ll/in |')
+                                    print('                         | + 15/11/25 |')
+                                    print('                         |            |')
+                                    print('                         |            |')
+                                    print('                         |   _        <')
+                                    print('                         |__/         |')
+                                    print('                          / `--.      |')
+                                    print('                        %|            |%')
+                                    print('                    |/.%%|          -< @%%%')
+                                    print('                    `\%`@|     v      |@@%@%%    - mfj')
+                                    print('                  .%%%@@@|%    |    % @@@%%@%%%%')
+                                    print('             _.%%%%%%@@@@@@%%_/%\_%@@%%@@@@@@@%%%%%%')
                                     return 'kijarat'
                                 time.sleep(1.5)
                                 input("\nHa készen álasz nyomd meg az entert!")
-                                return 'pince'
+                                return 'padlas'
                             case '2':
                                 return 'padlas'
                 case '4':
@@ -2088,6 +2264,7 @@ def padlas():
                         case '2':
                             return 'lepcsohaz'
                         """
+
 def haloszoba():
     global ora
     global perc
@@ -2206,6 +2383,29 @@ def mosdo():
                         pass
                     else:
                         print('Meghaltál')
+                        print('                          _____  _____')
+                        print('                         <     `/     |')
+                        print('                          >          (')
+                        print('                         |   _     _  |')
+                        print('                         |  |_) | |_) |')
+                        print('                         |  | \ | |   |')
+                        print('                         |            |')
+                        print('          ______.______%_|            |__________  _____')
+                        print('        _/                                       \|     |')
+                        print('       |                 Kedves Kalandor               <')
+                        print('       |_____.-._________              ____/|___________|')
+                        print('                         | * fi/ll/in |')
+                        print('                         | + 15/11/25 |')
+                        print('                         |            |')
+                        print('                         |            |')
+                        print('                         |   _        <')
+                        print('                         |__/         |')
+                        print('                          / `--.      |')
+                        print('                        %|            |%')
+                        print('                    |/.%%|          -< @%%%')
+                        print('                    `\%`@|     v      |@@%@%%    - mfj')
+                        print('                  .%%%@@@|%    |    % @@@%%@%%%%')
+                        print('             _.%%%%%%@@@@@@%%_/%\_%@@%%@@@@@@@%%%%%%')
                         return 'kijarat'
                     time.sleep(1.5)
                     input("\nHa készen álasz nyomd meg az entert!")
@@ -2222,6 +2422,29 @@ def mosdo():
                         pass
                     else:
                         print('Meghaltál')
+                        print('                          _____  _____')
+                        print('                         <     `/     |')
+                        print('                          >          (')
+                        print('                         |   _     _  |')
+                        print('                         |  |_) | |_) |')
+                        print('                         |  | \ | |   |')
+                        print('                         |            |')
+                        print('          ______.______%_|            |__________  _____')
+                        print('        _/                                       \|     |')
+                        print('       |                 Kedves Kalandor               <')
+                        print('       |_____.-._________              ____/|___________|')
+                        print('                         | * fi/ll/in |')
+                        print('                         | + 15/11/25 |')
+                        print('                         |            |')
+                        print('                         |            |')
+                        print('                         |   _        <')
+                        print('                         |__/         |')
+                        print('                          / `--.      |')
+                        print('                        %|            |%')
+                        print('                    |/.%%|          -< @%%%')
+                        print('                    `\%`@|     v      |@@%@%%    - mfj')
+                        print('                  .%%%@@@|%    |    % @@@%%@%%%%')
+                        print('             _.%%%%%%@@@@@@%%_/%\_%@@%%@@@@@@@%%%%%%')
                         return 'kijarat'
                     time.sleep(1.5)
                     input("\nHa készen álasz nyomd meg az entert!")
@@ -2231,36 +2454,66 @@ def mosdo():
 
 hely = foBejarat()
 while hely != 'kijarat':
-    match hely:
-        case 'fobejarat':
-            hely = foBejarat()
-        case 'csarnok':
-            hely = csarnok()
-        case 'pince':
-            hely = pince()
-        case 'folyoso':
-            hely = folyoso()
-        case 'udvar':
-            hely = udvar()
-        case 'konyha':
-            hely = konyha()
-        case 'etkezo':
-            hely = etkezo()
-        case 'konyvtar':
-            hely = konyvtar()
-        case 'konyvtarTeljesitett':
-            hely = konyvtarTeljesitett()
-        case 'galeria':
-            hely = galeria()
-        case 'iroda':
-            hely = iroda()
-        case 'lepcsohaz':
-            hely = lepcsohaz()
-        case 'elsoEmelet':
-            hely = elsoEmelet()
-        case 'padlas':
-            hely = padlas()
-        case 'haloszoba':
-            hely = haloszoba()
-        case 'mosdo':
-            hely = mosdo()
+    ehseg -= 1
+    if ehseg > 0:
+        match hely:
+            case 'fobejarat':
+                hely = foBejarat()
+            case 'csarnok':
+                hely = csarnok()
+            case 'pince':
+                hely = pince()
+            case 'folyoso':
+                hely = folyoso()
+            case 'udvar':
+                hely = udvar()
+            case 'konyha':
+                hely = konyha()
+            case 'etkezo':
+                hely = etkezo()
+            case 'konyvtar':
+                hely = konyvtar()
+            case 'konyvtarTeljesitett':
+                hely = konyvtarTeljesitett()
+            case 'galeria':
+                hely = galeria()
+            case 'iroda':
+                hely = iroda()
+            case 'lepcsohaz':
+                hely = lepcsohaz()
+            case 'elsoEmelet':
+                hely = elsoEmelet()
+            case 'padlas':
+                hely = padlas()
+            case 'haloszoba':
+                hely = haloszoba()
+            case 'mosdo':
+                hely = mosdo()
+    else:
+        os.system('cls')
+        print('Éhenhaltál.')
+        print('                          _____  _____')
+        print('                         <     `/     |')
+        print('                          >          (')
+        print('                         |   _     _  |')
+        print('                         |  |_) | |_) |')
+        print('                         |  | \ | |   |')
+        print('                         |            |')
+        print('          ______.______%_|            |__________  _____')
+        print('        _/                                       \|     |')
+        print('       |                 Kedves Kalandor               <')
+        print('       |_____.-._________              ____/|___________|')
+        print('                         | * fi/ll/in |')
+        print('                         | + 15/11/25 |')
+        print('                         |            |')
+        print('                         |            |')
+        print('                         |   _        <')
+        print('                         |__/         |')
+        print('                          / `--.      |')
+        print('                        %|            |%')
+        print('                    |/.%%|          -< @%%%')
+        print('                    `\%`@|     v      |@@%@%%    - mfj')
+        print('                  .%%%@@@|%    |    % @@@%%@%%%%')
+        print('             _.%%%%%%@@@@@@%%_/%\_%@@%%@@@@@@@%%%%%%')
+        input("\nHa készen álasz nyomd meg az entert!")
+        break
