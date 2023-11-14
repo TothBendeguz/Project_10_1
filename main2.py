@@ -26,7 +26,7 @@ def slowPrint(string, speed=0.05):
         sys.stdout.flush()
         time.sleep(speed)
 
-slowPrint('1925-ben, egy hideg téli este, a falu szélén magasodott az elhagyatott kastély. A vidék fehér hóval volt bevonva, és a kastély sötét, hátborzongató alakja feltűnt a horizonton. Az épület régóta lakatlan volt, és hosszú ideje tartották hírhedtnek a helyiek. A rémtörténetek egytől-egyig sötét eseményekről szóltak, amelyek itt zajlottak, és az emberek úgy érezték, hogy a kastély titokzatos erőket rejteget. Most, a hóesésben, az emberek újra hallották a kastély suttogásait, és az idő eljött, hogy felderítsék a múlt sötét rejtélyeit. Az elhagyatott kastély magasodott a téli éjszaka közepén, készen arra, hogy felfedezzék a titkait, mielőtt a borzalmak újra elszabadulnak, és bekebelezik az éjszakát. Az elhagyatott kastély falai tele vannak titkokkal, és most a te feladatod felfedezni ezt a sötét és rejtélyes helyet. Amint belépsz a főbejáraton az ajtó mögötted örökre becsukódik.', 0.04)
+slowPrint('1925-ben, egy hideg téli este, a falu szélén magasodott az elhagyatott kastély. A vidék fehér hóval volt bevonva, és a kastély sötét, hátborzongató alakja feltűnt a horizonton. Az épület régóta lakatlan volt, és hosszú ideje tartották hírhedtnek a helyiek. A rémtörténetek egytől-egyig sötét eseményekről szóltak, amelyek itt zajlottak, és az emberek úgy érezték, hogy a kastély titokzatos erőket rejteget. Most, a hóesésben, az emberek újra hallották a kastély suttogásait, és az idő eljött, hogy felderítsék a múlt sötét rejtélyeit. Az elhagyatott kastély magasodott a téli éjszaka közepén, készen arra, hogy felfedezzék a titkait, mielőtt a borzalmak újra elszabadulnak, és bekebelezik az éjszakát. Az elhagyatott kastély falai tele vannak titkokkal, és most a te feladatod felfedezni ezt a sötét és rejtélyes helyet. Amint belépsz a főbejáraton az ajtó mögötted örökre becsukódik.', 0.05)
 
 input("\n\nHa készen álasz nyomd meg az entert!")
 os.system('cls')
@@ -386,7 +386,7 @@ def pince():
                                 time.sleep(1.5)
                                 print('A hp-d növekedett 5-el')
                                 time.sleep(1.5)
-                                if hp < 95:
+                                if hp < 96:
                                     hp += 5
                                 else:
                                     hp += 0
@@ -1131,6 +1131,7 @@ def etkezo():
     global ehseg
     global ora
     global perc
+    global teleHas
     perc += 5
     v = 0
     while v != 1 and 2 and 3:
@@ -1194,12 +1195,12 @@ def etkezo():
                     os.system('cls')
                     print('Mivel csináltál kaját, van mit enned')
                     print('Elkezdesz enni.')
-                    print('Végeztél, jól laktál, ezért ez +5 kaja.')
-                    teleHas == True
-                    if ehseg < 96:
-                        ehseg += 5
+                    print('Végeztél, jól laktál, ezért ez +15 kaja.')
+                    teleHas = True
+                    if ehseg < 86:
+                        ehseg += 15
                     else:
-                        ehseg += 0
+                        ehseg = 101
                     input("\nHa készen álasz nyomd meg az entert!")
                     kaja = False
                     return 'etkezo'
@@ -2378,7 +2379,10 @@ def mosdo():
                     print('Mivel előtte ettél már, elvégzed a dolgod.')
                     time.sleep(1.5)
                     print('A józanságod növekedett 20-al')
-                    jozansag += 20
+                    if jozansag < 81:
+                        jozansag += 20
+                    else:
+                        pass
                     if jozansag > 0:
                         pass
                     else:
