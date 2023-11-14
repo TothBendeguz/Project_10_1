@@ -95,3 +95,16 @@ h2{
     margin-left: 200px;
     margin-right: 200px;
 }
+
+.text img{
+    width: 150px;
+    float: left;
+}
+
+.text h2{
+    padding-left: 220px;
+}
+
+.text p{
+    padding-left: 220px;
+}
